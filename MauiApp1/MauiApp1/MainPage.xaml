@@ -1,0 +1,70 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30,0" Spacing="30" BackgroundColor="#0F3C3C">
+
+            <Border Background="#0B2F2F"
+                    Stroke="#0B2F2F"
+                    StrokeThickness="2"
+                    HeightRequest="500"
+                    WidthRequest="600"
+                    Padding="20"
+                    StrokeShape="RoundRectangle 20">
+
+                <Grid HorizontalOptions="Center" RowSpacing="20">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Label Grid.Row="0"
+                           Text="Bienvenido al sistema VarieSoft"
+                           Style="{StaticResource Headline}"
+                           SemanticProperties.HeadingLevel="Level1"
+                           WidthRequest="400"
+                           TextColor="#D2B48C"/>
+
+                    <Label Grid.Row="1"
+                           Text="Inicio de sesión"
+                           Style="{StaticResource SubHeadline}"
+                           SemanticProperties.HeadingLevel="Level2"
+                           TextColor="#D2B48C"/>
+
+                    <Entry Grid.Row="2"
+                           Placeholder="Ingrese su cuenta"
+                           Text="{Binding TextoIngresado}"
+                           TextColor="Black"
+                           BackgroundColor="#D2B48C"
+                           PlaceholderColor="Black"
+                           WidthRequest="400"
+                           HeightRequest="40"/>
+
+                    <Entry Grid.Row="3"
+                           Placeholder="Ingrese su contraseña"
+                           Text="{Binding TextoIngresado}"
+                           TextColor="Black"
+                           BackgroundColor="#D2B48C"
+                           PlaceholderColor="Black"
+                           WidthRequest="400"
+                           HeightRequest="40"
+                           IsPassword="True"/>
+
+                    <Button Grid.Row="4"
+                            Text="Iniciar Sesión"
+                            TextColor="Black"
+                            BackgroundColor="#D2B48C"
+                            WidthRequest="200"
+                            HeightRequest="40"/>
+                </Grid>
+
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
