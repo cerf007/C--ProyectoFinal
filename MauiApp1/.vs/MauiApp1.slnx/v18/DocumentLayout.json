@@ -11,20 +11,20 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MauiApp1\\Servicios\\AutenticacionServicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\Desktop\\C#-Proyecto\\MauiApp1\\MauiApp1\\Modelos\\Personal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MauiApp1\\Modelos\\Personal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\Desktop\\C#-Proyecto\\MauiApp1\\MauiApp1\\Modelos\\Cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MauiApp1\\Modelos\\Cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\Desktop\\C#-Proyecto\\MauiApp1\\MauiApp1\\MauiProgram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MauiApp1\\MauiProgram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\Desktop\\C#-Proyecto\\MauiApp1\\MauiApp1\\Modelos\\Factura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MauiApp1\\Modelos\\Factura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\Desktop\\C#-Proyecto\\MauiApp1\\MauiApp1\\Modelos\\Personal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MauiApp1\\Modelos\\Personal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\Desktop\\C#-Proyecto\\MauiApp1\\MauiApp1\\Modelos\\Cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MauiApp1\\Modelos\\Cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\Desktop\\C#-Proyecto\\MauiApp1\\MauiApp1\\Modelos\\DetalleVenta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -46,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,6 +58,19 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DatabaseService.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\C#-Proyecto\\MauiApp1\\MauiApp1\\Servicios\\DatabaseService.cs",
+              "RelativeDocumentMoniker": "MauiApp1\\Servicios\\DatabaseService.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\C#-Proyecto\\MauiApp1\\MauiApp1\\Servicios\\DatabaseService.cs",
+              "RelativeToolTip": "MauiApp1\\Servicios\\DatabaseService.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAvwAYAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T16:54:42.93Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
               "Title": "AutenticacionServicio.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\C#-Proyecto\\MauiApp1\\MauiApp1\\Servicios\\AutenticacionServicio.cs",
@@ -66,12 +79,11 @@
               "RelativeToolTip": "MauiApp1\\Servicios\\AutenticacionServicio.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T01:29:21.289Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-24T01:29:21.289Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "MauiProgram.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\C#-Proyecto\\MauiApp1\\MauiApp1\\MauiProgram.cs",
               "RelativeDocumentMoniker": "MauiApp1\\MauiProgram.cs",
@@ -83,7 +95,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "Factura.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\C#-Proyecto\\MauiApp1\\MauiApp1\\Modelos\\Factura.cs",
               "RelativeDocumentMoniker": "MauiApp1\\Modelos\\Factura.cs",
@@ -95,7 +107,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Personal.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\C#-Proyecto\\MauiApp1\\MauiApp1\\Modelos\\Personal.cs",
               "RelativeDocumentMoniker": "MauiApp1\\Modelos\\Personal.cs",
@@ -103,12 +115,11 @@
               "RelativeToolTip": "MauiApp1\\Modelos\\Personal.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T17:23:31.46Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-23T17:23:31.46Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Cliente.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\C#-Proyecto\\MauiApp1\\MauiApp1\\Modelos\\Cliente.cs",
               "RelativeDocumentMoniker": "MauiApp1\\Modelos\\Cliente.cs",
@@ -116,21 +127,7 @@
               "RelativeToolTip": "MauiApp1\\Modelos\\Cliente.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T17:10:15.026Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "DatabaseService.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\C#-Proyecto\\MauiApp1\\MauiApp1\\Servicios\\DatabaseService.cs",
-              "RelativeDocumentMoniker": "MauiApp1\\Servicios\\DatabaseService.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\C#-Proyecto\\MauiApp1\\MauiApp1\\Servicios\\DatabaseService.cs",
-              "RelativeToolTip": "MauiApp1\\Servicios\\DatabaseService.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAACIAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T16:54:42.93Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-23T17:10:15.026Z"
             },
             {
               "$type": "Document",

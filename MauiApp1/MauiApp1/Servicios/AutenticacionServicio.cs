@@ -1,4 +1,4 @@
-﻿using MauiApp1.Modelos;
+using MauiApp1.Modelos;
 using System.Threading.Tasks;
 
 namespace MauiApp1.Servicios
@@ -35,5 +35,6 @@ namespace MauiApp1.Servicios
 
             return null; // Contraseña incorrecta
         }
+
     }
 }
