@@ -20,5 +20,9 @@ namespace MauiApp1.Modelos
         public string Permisos { get; set; }
 
         public DateTime FechaContratacion { get; set; }
+
+
+        [MaxLength(100)]
+        public string Contrasena { get; set; } // Campo necesario para la autenticación
     }
 }
