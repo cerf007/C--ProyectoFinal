@@ -26,6 +26,13 @@ namespace MauiApp1.Servicios
             // en los atributos de la clase, las manejas por la lógica del C# 
             // y los campos que incluyes (e.g., int IDCliente).
         }
+        public Task<Personal> GetPersonalPorNombreAsync(string nombre)
+        {
+            // Esto resuelve el error CS1061 que tenías previamente
+            return _database.Table<Personal>()
+                            .Where(p => p.Nombre == nombre)
+                            .FirstOrDefaultAsync();
+        }
 
         // ... (Aquí puedes agregar tus métodos CRUD: GetClientes, SaveCliente, etc.)
     }
