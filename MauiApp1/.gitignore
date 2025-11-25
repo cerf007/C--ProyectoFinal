@@ -1,0 +1,43 @@
+# Archivos binarios de compilación
+[Dd]ebug/
+[Rr]elease/
+**/[Bb]in/
+**/[Oo]bj/
+
+# Paquetes NuGet
+*.nupkg
+# Excluye la carpeta 'packages' si usas el estilo PackageReference
+# Si no la usas, es inofensivo
+packages/
+
+# Visual Studio y archivos IDE
+#############################
+.vs/                   # Esto resuelve tu error de Permission Denied
+*.suo
+*.user
+*.useros
+*.tlog
+*.log
+*.vspscc
+*.vssscc
+
+# PDB (símbolos de depuración)
+*.pdb
+
+# Configuración del entorno
+appsettings.Development.json
+appsettings.Production.json
+
+# Archivos específicos de MAUI (iOS/Android/Windows)
+# Cache de builds de iOS/Android
+**/caches/
+**/Intermediate/
+**/*.xcarchive/
+
+# Archivos de certificados y claves
+*.pfx
+*.snk
+
+# Archivos generados automáticamente
+# Archivos de recursos que VS genera
+Resources/Splash/splash_generated.svg

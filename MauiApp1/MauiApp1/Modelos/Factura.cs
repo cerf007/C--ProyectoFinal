@@ -5,7 +5,7 @@ namespace MauiApp1.Modelos
     public class Factura
     {
         [PrimaryKey, AutoIncrement]
-        public int IDVenta { get; set; }
+        public int IDFactura { get; set; }
 
         public DateTime FechaEmision { get; set; }
 
