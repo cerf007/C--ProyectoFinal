@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ReportesNuevo.MainPage">
+
+    <Grid BackgroundColor="#2C4744" RowDefinitions="Auto, *">
+
+        <!-- Encabezado -->
+        <VerticalStackLayout Grid.Row="0" Margin="20, 40, 20, 20" BackgroundColor="#0B2F2F">
+            <Label 
+                Text="📈 Panel de Reportes" 
+                TextColor="#D2B48C" 
+                FontSize="28" 
+                FontAttributes="Bold" />
+            <Label 
+                Text="Visualización y descarga de indicadores clave." 
+                TextColor="Gray" 
+                FontSize="16" 
+                Margin="0, 5, 0, 0"/>
+        </VerticalStackLayout>
+
+        <!-- Contenido principal con borde derecho -->
+        <Grid Grid.Row="1" ColumnDefinitions="Auto, Auto">
+
+            <!-- ListView -->
+            <ListView Grid.Column="0"
+                      Margin="20"
+                      BackgroundColor="#0B2F2F"
+                      SelectionMode="Single"
+                      WidthRequest="400"
+                      HeightRequest="400"
+                      HorizontalOptions="Start"
+                      VerticalOptions="Start">
+                <ListView.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Reporte diario</x:String>
+                        <x:String>Reporte mensual</x:String>
+                        <x:String>Reporte trimestral</x:String>
+                        <x:String>Reporte anual</x:String>
+                    </x:Array>
+                </ListView.ItemsSource>
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="10" BackgroundColor="#0B2F2F">
+                                <VerticalStackLayout Spacing="5">
+                                    <Label Text="{Binding}" 
+                                           TextColor="#D1B89F" 
+                                           FontSize="16" 
+                                           FontAttributes="Bold"/>
+                                    <Button Text="Ver Detalle" 
+                                            BackgroundColor="#D1B89F"
+                                            TextColor="Black"
+                                            CornerRadius="5"/>
+                                </VerticalStackLayout>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <!-- Borde decorativo a la derecha -->
+            <Border Grid.Column="1"
+                    Stroke="#D1B89F"
+                    BackgroundColor="#0B2F2F"
+                    WidthRequest="1460"
+                    HeightRequest="800"
+                    HorizontalOptions="End"
+                    VerticalOptions="Start"/>
+        </Grid>
+        <Button Grid.Row="2"
+                Text="Regresar"
+                BackgroundColor="#D1B89F"
+                TextColor="Black"
+                Margin="20"
+                HorizontalOptions="Start"
+                VerticalOptions="End"/>
+
+    </Grid>
+</ContentPage>

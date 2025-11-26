@@ -1,3 +1,5 @@
 <Solution>
   <Project Path="MauiApp1/MauiApp1.csproj" />
+  <Project Path="ReportesNuevo/ReportesNuevo.csproj" Id="613eb63e-a063-4974-9b39-2c4255e3ce79" />
+  <Project Path="Sesion Gerente/Sesion Gerente.csproj" Id="a791c5b1-c2f0-4aa7-b18c-e44fd36391db" />
 </Solution>

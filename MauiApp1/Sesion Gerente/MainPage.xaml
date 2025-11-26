@@ -1,0 +1,88 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Sesion_Gerente.MainPage"
+             Title="VarieSoft"
+             BackgroundColor="#0F3C3C">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <!-- Contenedor con borde para todo el contenido -->
+            <Border Background="#0B2F2F"
+                    Stroke="#0B2F2F"
+                    StrokeThickness="2"
+                    HeightRequest="570"
+                    WidthRequest="800"
+                    Padding="20"
+                    StrokeShape="RoundRectangle 20">
+                <VerticalStackLayout Spacing="20">
+
+                    <!-- Título principal -->
+                    <Label Text="Bienvenido al sistema"
+                           FontSize="28"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center"
+                           TextColor="#D2B48C"/>
+
+                    <!-- Subtítulo -->
+                    <Label Text="Sesión de Gerente"
+                           FontSize="22"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center"
+                           TextColor="#D2B48C"/>
+
+                    <!-- Encabezado del panel -->
+                    <Label Text="Panel principal"
+                           FontSize="20"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center"
+                           TextColor="#D2B48C"/>
+
+                    <!-- Instrucción -->
+                    <Label Text="Selecciona la sección a la que deseas acceder para administrar tu tienda"
+                           FontSize="16"
+                           HorizontalTextAlignment="Center"
+                           TextColor="Gray"
+                           Margin="0,10"/>
+
+                    <!-- Botones funcionales -->
+                    <Button Text="Acceso a reportes"
+                            BackgroundColor="#D2B48C"
+                            TextColor="Black"
+                            FontAttributes="Bold"
+                            Clicked="OnReportesClicked"/>
+
+                    <Button Text="Acceso a proveedores"
+                            BackgroundColor="#D2B48C"
+                            TextColor="Black"
+                            CornerRadius="12"
+                            FontAttributes="Bold"
+                            Clicked="OnProveedoresClicked"/>
+
+                    <Button Text="Acceso a bases de datos"
+                            BackgroundColor="#D2B48C"
+                            TextColor="Black"
+                            FontAttributes="Bold"
+                            Clicked="OnBasesDatosClicked"/>
+
+                    <Button Text="Administrar cuentas"
+                            BackgroundColor="#D2B48C"
+                            TextColor="Black"
+                            FontAttributes="Bold"
+                            Clicked="OnCuentasClicked"/>
+
+                    <!-- Nota de acceso restringido -->
+                    <Label Text="Opciones disponibles solo para gerentes autorizados"
+                           FontSize="12"
+                           TextColor="Gray"
+                           HorizontalOptions="Center"
+                           Margin="0,30,0,0"/>
+
+                </VerticalStackLayout>
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+
+
+</ContentPage>

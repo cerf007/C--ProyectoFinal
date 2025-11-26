@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\Desktop\\C#-Proyecto\\MauiApp1\\MauiApp1\\MauiApp1.csproj": {}
+    "C:\\Users\\duran\\Desktop\\AHora si\\MauiApp1\\MauiApp1\\MauiApp1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\Desktop\\C#-Proyecto\\MauiApp1\\MauiApp1\\MauiApp1.csproj": {
+    "C:\\Users\\duran\\Desktop\\AHora si\\MauiApp1\\MauiApp1\\MauiApp1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\Desktop\\C#-Proyecto\\MauiApp1\\MauiApp1\\MauiApp1.csproj",
+        "projectUniqueName": "C:\\Users\\duran\\Desktop\\AHora si\\MauiApp1\\MauiApp1\\MauiApp1.csproj",
         "projectName": "MauiApp1",
-        "projectPath": "C:\\Users\\user\\Desktop\\C#-Proyecto\\MauiApp1\\MauiApp1\\MauiApp1.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\Desktop\\C#-Proyecto\\MauiApp1\\MauiApp1\\obj\\",
+        "projectPath": "C:\\Users\\duran\\Desktop\\AHora si\\MauiApp1\\MauiApp1\\MauiApp1.csproj",
+        "packagesPath": "C:\\Users\\duran\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\duran\\Desktop\\AHora si\\MauiApp1\\MauiApp1\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\duran\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -38,11 +38,11 @@
             "targetAlias": "net10.0-android",
             "projectReferences": {}
           },
-          "net10.0-ios26.1": {
+          "net10.0-ios26.0": {
             "targetAlias": "net10.0-ios",
             "projectReferences": {}
           },
-          "net10.0-maccatalyst26.1": {
+          "net10.0-maccatalyst26.0": {
             "targetAlias": "net10.0-maccatalyst",
             "projectReferences": {}
           },
@@ -388,7 +388,7 @@
             "System.Xml.XPath.XDocument": "(,5.0.32767]"
           }
         },
-        "net10.0-ios26.1": {
+        "net10.0-ios26.0": {
           "targetAlias": "net10.0-ios",
           "dependencies": {
             "Microsoft.Extensions.Logging.Debug": {
@@ -712,7 +712,7 @@
             "System.Xml.XPath.XDocument": "(,5.0.32767]"
           }
         },
-        "net10.0-maccatalyst26.1": {
+        "net10.0-maccatalyst26.0": {
           "targetAlias": "net10.0-maccatalyst",
           "dependencies": {
             "Microsoft.Extensions.Logging.Debug": {

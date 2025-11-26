@@ -1,0 +1,71 @@
+﻿<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="VariedSoftApp.ReportsPage"
+    Title="Reportes y Estadísticas">
+
+    <Grid BackgroundColor="#0F3C3C" RowDefinitions="Auto, *">
+
+        <VerticalStackLayout Grid.Row="0" Margin="20, 40, 20, 20">
+            <Label 
+                Text="📈 Panel de Reportes" 
+                TextColor="#D2B48C" 
+                FontSize="40" 
+                FontAttributes="Bold"
+                BackgroundColor="#0B2F2F"/>
+            <Label 
+                Text="Visualización y descarga de indicadores clave." 
+                TextColor="Gray" 
+                FontSize="16" 
+                Margin="0, 5, 0, 0"/>
+        </VerticalStackLayout>
+
+        <ScrollView Grid.Row="1" Padding="20, 0, 20, 20">
+            <VerticalStackLayout Spacing="20">
+
+                <Label 
+                    Text="Reportes Financieros Clave" 
+                    TextColor="#D1B89F" 
+                    FontSize="18" 
+                    FontAttributes="Bold" />
+
+                <Grid ColumnDefinitions="*, *" RowDefinitions="Auto, Auto" ColumnSpacing="15" RowSpacing="15">
+
+                    <Border Grid.Row="0" Grid.Column="0" Style="{StaticResource ReportCardStyle}" BackgroundColor="#0B2F2F" StrokeShape="RoundRectangle 10">
+                        <VerticalStackLayout Spacing="10" Padding="10">
+                            <Label Text="Ventas Diarias/Mensuales" TextColor="#D2B48C" FontSize="16" FontAttributes="Bold"/>
+                            <Label Text="Detalle de transacciones e ingresos generados." TextColor="#D2B48C" FontSize="12"/>
+                            <Button Text="Ver Detalle" Style="{StaticResource CardButtonStyle}" Clicked="OnVentasClicked" BackgroundColor="#D2B48C"/>
+                        </VerticalStackLayout>
+                    </Border>
+
+                    <Border Grid.Row="0" Grid.Column="1" Style="{StaticResource ReportCardStyle}" BackgroundColor="#0B2F2F" StrokeShape="RoundRectangle 10">
+                        <VerticalStackLayout Spacing="10" Padding="10">
+                            <Label Text="Stock y Movimiento de Inventario" TextColor="#D2B48C" FontSize="16" FontAttributes="Bold"/>
+                            <Label Text="Reporte de existencias mínimas y productos más vendidos." TextColor="#D2B48C" FontSize="12"/>
+                            <Button Text="Ver Detalle" Style="{StaticResource CardButtonStyle}" Clicked="OnInventarioClicked" BackgroundColor="#D2B48C"/>
+                        </VerticalStackLayout>
+                    </Border>
+
+                    <Border Grid.Row="1" Grid.Column="0" Style="{StaticResource ReportCardStyle}" BackgroundColor="#0B2F2F" StrokeShape="RoundRectangle 10">
+                        <VerticalStackLayout Spacing="10" Padding="10">
+                            <Label Text="Rendimiento de Empleados" TextColor="#D2B48C" FontSize="16" FontAttributes="Bold"/>
+                            <Label Text="Métricas de desempeño por usuario del sistema." TextColor="#D2B48C" FontSize="12"/>
+                            <Button Text="Ver Detalle" Style="{StaticResource CardButtonStyle}" Clicked="OnEmpleadosClicked" BackgroundColor="#D2B48C"/>
+                        </VerticalStackLayout>
+                    </Border>
+
+                    <Border Grid.Row="1" Grid.Column="1" Style="{StaticResource ReportCardStyle}" BackgroundColor="#0B2F2F" StrokeShape="RoundRectangle 10">
+                        <VerticalStackLayout Spacing="10" Padding="10">
+                            <Label Text="Cuentas por Pagar/Cobrar" TextColor="#D2B48C" FontSize="16" FontAttributes="Bold"/>
+                            <Label Text="Seguimiento de saldos pendientes con proveedores y clientes." TextColor="#D2B48C" FontSize="12"/>
+                            <Button Text="Ver Detalle" Style="{StaticResource CardButtonStyle}" Clicked="OnCuentasClicked" BackgroundColor="#D2B48C"/>
+                        </VerticalStackLayout>
+                    </Border>
+
+                </Grid>
+
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>
