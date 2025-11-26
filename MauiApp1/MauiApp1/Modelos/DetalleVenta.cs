@@ -7,10 +7,10 @@ namespace MauiApp1.Modelos
     public class DetalleVenta
     {
         [PrimaryKey, AutoIncrement]
-        public int Id { get; set; }
+        public int IDDetalleVenta { get; set; }
 
-        // 🔑 Claves Foráneas que actúan como clave compuesta en el DER
-        public int IDVenta { get; set; }
+        //Claves Foráneas que actúan como clave compuesta en el DER
+        public int IDFactura{ get; set; }
         public int IDProducto { get; set; }
 
         public int Cantidad { get; set; }

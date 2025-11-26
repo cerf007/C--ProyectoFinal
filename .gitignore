@@ -1,0 +1,24 @@
+# Archivos de compilación
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+*.cache
+*.log
+
+# Archivos de configuración local
+*.user
+*.suo
+*.vs/
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de MAUI específicos
+**/intermediatexaml/
+**/refint/
+*.nuget.*
+project.assets.json
+project.nuget.cache
