@@ -1,40 +1,7 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\duran\\Desktop\\AHora si\\MauiApp1\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{613EB63E-A063-4974-9B39-2C4255E3CE79}|ReportesNuevo\\ReportesNuevo.csproj|c:\\users\\duran\\desktop\\ahora si\\mauiapp1\\reportesnuevo\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{613EB63E-A063-4974-9B39-2C4255E3CE79}|ReportesNuevo\\ReportesNuevo.csproj|solutionrelative:reportesnuevo\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A791C5B1-C2F0-4AA7-B18C-E44FD36391DB}|Sesion Gerente\\Sesion Gerente.csproj|c:\\users\\duran\\desktop\\ahora si\\mauiapp1\\sesion gerente\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{A791C5B1-C2F0-4AA7-B18C-E44FD36391DB}|Sesion Gerente\\Sesion Gerente.csproj|solutionrelative:sesion gerente\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A791C5B1-C2F0-4AA7-B18C-E44FD36391DB}|Sesion Gerente\\Sesion Gerente.csproj|c:\\users\\duran\\desktop\\ahora si\\mauiapp1\\sesion gerente\\sesion gerente.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{A791C5B1-C2F0-4AA7-B18C-E44FD36391DB}|Sesion Gerente\\Sesion Gerente.csproj|solutionrelative:sesion gerente\\sesion gerente.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{613EB63E-A063-4974-9B39-2C4255E3CE79}|ReportesNuevo\\ReportesNuevo.csproj|c:\\users\\duran\\desktop\\ahora si\\mauiapp1\\reportesnuevo\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{613EB63E-A063-4974-9B39-2C4255E3CE79}|ReportesNuevo\\ReportesNuevo.csproj|solutionrelative:reportesnuevo\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DBB709D5-80F0-EE7D-A2D1-7D84BC5D452F}|MauiApp1\\MauiApp1.csproj|c:\\users\\duran\\desktop\\ahora si\\mauiapp1\\mauiapp1\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{DBB709D5-80F0-EE7D-A2D1-7D84BC5D452F}|MauiApp1\\MauiApp1.csproj|solutionrelative:mauiapp1\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A791C5B1-C2F0-4AA7-B18C-E44FD36391DB}|Sesion Gerente\\Sesion Gerente.csproj|c:\\users\\duran\\desktop\\ahora si\\mauiapp1\\sesion gerente\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{A791C5B1-C2F0-4AA7-B18C-E44FD36391DB}|Sesion Gerente\\Sesion Gerente.csproj|solutionrelative:sesion gerente\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{613EB63E-A063-4974-9B39-2C4255E3CE79}|ReportesNuevo\\ReportesNuevo.csproj|c:\\users\\duran\\desktop\\ahora si\\mauiapp1\\reportesnuevo\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{613EB63E-A063-4974-9B39-2C4255E3CE79}|ReportesNuevo\\ReportesNuevo.csproj|solutionrelative:reportesnuevo\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A791C5B1-C2F0-4AA7-B18C-E44FD36391DB}|Sesion Gerente\\Sesion Gerente.csproj|c:\\users\\duran\\desktop\\ahora si\\mauiapp1\\sesion gerente\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A791C5B1-C2F0-4AA7-B18C-E44FD36391DB}|Sesion Gerente\\Sesion Gerente.csproj|solutionrelative:sesion gerente\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\C#\\C--ProyectoFinal\\MauiApp1\\",
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -42,34 +9,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": -1,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "MainPage.xaml",
-              "DocumentMoniker": "C:\\Users\\duran\\Desktop\\AHora si\\MauiApp1\\MauiApp1\\MainPage.xaml",
-              "RelativeDocumentMoniker": "MauiApp1\\MainPage.xaml",
-              "ToolTip": "C:\\Users\\duran\\Desktop\\AHora si\\MauiApp1\\MauiApp1\\MainPage.xaml",
-              "RelativeToolTip": "MauiApp1\\MainPage.xaml",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAAAAgAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-11-26T03:37:40.469Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Sesion Gerente",
-              "DocumentMoniker": "C:\\Users\\duran\\Desktop\\AHora si\\MauiApp1\\Sesion Gerente\\Sesion Gerente.csproj",
-              "RelativeDocumentMoniker": "Sesion Gerente\\Sesion Gerente.csproj",
-              "ToolTip": "C:\\Users\\duran\\Desktop\\AHora si\\MauiApp1\\Sesion Gerente\\Sesion Gerente.csproj",
-              "RelativeToolTip": "Sesion Gerente\\Sesion Gerente.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-11-26T15:46:50.865Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
               "$type": "Bookmark",
@@ -77,84 +25,7 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AppShell.xaml",
-              "DocumentMoniker": "C:\\Users\\duran\\Desktop\\AHora si\\MauiApp1\\ReportesNuevo\\AppShell.xaml",
-              "RelativeDocumentMoniker": "ReportesNuevo\\AppShell.xaml",
-              "ToolTip": "C:\\Users\\duran\\Desktop\\AHora si\\MauiApp1\\ReportesNuevo\\AppShell.xaml*",
-              "RelativeToolTip": "ReportesNuevo\\AppShell.xaml*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-11-26T15:30:11.675Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MainPage.xaml",
-              "DocumentMoniker": "C:\\Users\\duran\\Desktop\\AHora si\\MauiApp1\\Sesion Gerente\\MainPage.xaml",
-              "RelativeDocumentMoniker": "Sesion Gerente\\MainPage.xaml",
-              "ToolTip": "C:\\Users\\duran\\Desktop\\AHora si\\MauiApp1\\Sesion Gerente\\MainPage.xaml",
-              "RelativeToolTip": "Sesion Gerente\\MainPage.xaml",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAkAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-11-26T04:21:26.953Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MainPage.xaml",
-              "DocumentMoniker": "C:\\Users\\duran\\Desktop\\AHora si\\MauiApp1\\ReportesNuevo\\MainPage.xaml",
-              "RelativeDocumentMoniker": "ReportesNuevo\\MainPage.xaml",
-              "ToolTip": "C:\\Users\\duran\\Desktop\\AHora si\\MauiApp1\\ReportesNuevo\\MainPage.xaml",
-              "RelativeToolTip": "ReportesNuevo\\MainPage.xaml",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAAA8AAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-11-26T03:32:10.452Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "App.xaml",
-              "DocumentMoniker": "C:\\Users\\duran\\Desktop\\AHora si\\MauiApp1\\ReportesNuevo\\App.xaml",
-              "RelativeDocumentMoniker": "ReportesNuevo\\App.xaml",
-              "ToolTip": "C:\\Users\\duran\\Desktop\\AHora si\\MauiApp1\\ReportesNuevo\\App.xaml",
-              "RelativeToolTip": "ReportesNuevo\\App.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-11-26T03:31:33.672Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AppShell.xaml",
-              "DocumentMoniker": "C:\\Users\\duran\\Desktop\\AHora si\\MauiApp1\\Sesion Gerente\\AppShell.xaml",
-              "RelativeDocumentMoniker": "Sesion Gerente\\AppShell.xaml",
-              "ToolTip": "C:\\Users\\duran\\Desktop\\AHora si\\MauiApp1\\Sesion Gerente\\AppShell.xaml",
-              "RelativeToolTip": "Sesion Gerente\\AppShell.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-11-26T03:30:51.41Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "MainPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\duran\\Desktop\\AHora si\\MauiApp1\\Sesion Gerente\\MainPage.xaml.cs",
-              "RelativeDocumentMoniker": "Sesion Gerente\\MainPage.xaml.cs",
-              "ToolTip": "C:\\Users\\duran\\Desktop\\AHora si\\MauiApp1\\Sesion Gerente\\MainPage.xaml.cs",
-              "RelativeToolTip": "Sesion Gerente\\MainPage.xaml.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-26T03:30:41.719Z"
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             }
           ]
         }

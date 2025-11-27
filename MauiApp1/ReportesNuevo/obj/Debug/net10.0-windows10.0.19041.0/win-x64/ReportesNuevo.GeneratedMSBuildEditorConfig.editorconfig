@@ -14,7 +14,7 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ReportesNuevo
-build_property.ProjectDir = C:\Users\duran\Desktop\AHora si\MauiApp1\ReportesNuevo\
+build_property.ProjectDir = C:\Users\user\Desktop\C#\C--ProyectoFinal\MauiApp1\ReportesNuevo\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.CsWinRTAotOptimizerEnabled = true
@@ -28,7 +28,7 @@ build_property.CsWinRTUseWindowsUIXamlProjections = false
 build_property.EffectiveAnalysisLevelStyle = 10.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/duran/Desktop/AHora si/MauiApp1/ReportesNuevo/App.xaml]
+[C:/Users/user/Desktop/C\#/C--ProyectoFinal/MauiApp1/ReportesNuevo/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = ReportesNuevo.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
@@ -38,7 +38,7 @@ build_metadata.AdditionalFiles.NoWarn =
 build_metadata.AdditionalFiles.EnableDiagnostics = 
 build_metadata.AdditionalFiles.LineInfo = 
 
-[C:/Users/duran/Desktop/AHora si/MauiApp1/ReportesNuevo/AppShell.xaml]
+[C:/Users/user/Desktop/C\#/C--ProyectoFinal/MauiApp1/ReportesNuevo/AppShell.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = ReportesNuevo.AppShell.xaml
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
@@ -48,7 +48,7 @@ build_metadata.AdditionalFiles.NoWarn =
 build_metadata.AdditionalFiles.EnableDiagnostics = 
 build_metadata.AdditionalFiles.LineInfo = 
 
-[C:/Users/duran/Desktop/AHora si/MauiApp1/ReportesNuevo/MainPage.xaml]
+[C:/Users/user/Desktop/C\#/C--ProyectoFinal/MauiApp1/ReportesNuevo/MainPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = ReportesNuevo.MainPage.xaml
 build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
@@ -58,7 +58,7 @@ build_metadata.AdditionalFiles.NoWarn =
 build_metadata.AdditionalFiles.EnableDiagnostics = 
 build_metadata.AdditionalFiles.LineInfo = 
 
-[C:/Users/duran/Desktop/AHora si/MauiApp1/ReportesNuevo/Resources/Styles/Colors.xaml]
+[C:/Users/user/Desktop/C\#/C--ProyectoFinal/MauiApp1/ReportesNuevo/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = ReportesNuevo.Resources.Styles.Colors.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
@@ -68,7 +68,7 @@ build_metadata.AdditionalFiles.NoWarn =
 build_metadata.AdditionalFiles.EnableDiagnostics = 
 build_metadata.AdditionalFiles.LineInfo = 
 
-[C:/Users/duran/Desktop/AHora si/MauiApp1/ReportesNuevo/Resources/Styles/Styles.xaml]
+[C:/Users/user/Desktop/C\#/C--ProyectoFinal/MauiApp1/ReportesNuevo/Resources/Styles/Styles.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = ReportesNuevo.Resources.Styles.Styles.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ReportesNuevo")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+bc6dc28d8de499071ec989153c7567543db09159")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+85d71cf92e3d7ebf57338f9b18ed41107dc729eb")]
 [assembly: System.Reflection.AssemblyProductAttribute("ReportesNuevo")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ReportesNuevo")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
