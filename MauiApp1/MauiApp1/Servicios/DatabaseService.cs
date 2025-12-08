@@ -1,61 +1,120 @@
-﻿using MauiApp1.Modelos; // Asegúrate de que este es tu namespace
-using SQLite;
+﻿using SQLite;
+using MauiApp1.Modelos;
+using System.Text;
+using System.Security.Cryptography;
+using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace MauiApp1.Servicios
 {
     public class DatabaseService
     {
+        private readonly SQLiteAsyncConnection _database;
+
+        // Variable para saber si ya iniciamos la BD
+        private bool _inicializado = false;
+
+        public DatabaseService(SQLiteAsyncConnection db)
+        {
+            _database = db;
+            // El constructor debe quedar limpio y rápido
+        }
+
+        // Creamos este nuevo método dedicado
+        public async Task InicializarAsync()
+        {
+            if (_inicializado) return; // Si ya está lista, no hacemos nada
+
+            // Crear tablas (si no existen)
+            await _database.CreateTableAsync<Personal>();
+            await _database.CreateTableAsync<Cliente>();
+            await _database.CreateTableAsync<Proveedor>();
+            await _database.CreateTableAsync<Producto>();
+            await _database.CreateTableAsync<Factura>();
+            await _database.CreateTableAsync<DetalleVenta>();
+            await _database.CreateTableAsync<DetalleSuministro>();
+
+            // Intentar añadir columnas nuevas (si la BD ya existía)
+            try
+            {
+                await _database.ExecuteAsync("ALTER TABLE Personal ADD COLUMN Email TEXT");
+            }
+            catch { /* ignora si ya existe */ }
+
+            try
+            {
+                await _database.ExecuteAsync("ALTER TABLE Personal ADD COLUMN Departamento TEXT");
+            }
+            catch { /* ignora si ya existe */ }
+
+            // Intentar añadir columnas nuevas en Proveedor (si se migró el modelo)
+            try
+            {
+                await _database.ExecuteAsync("ALTER TABLE Proveedor ADD COLUMN RFC TEXT");
+            }
+            catch { /* ignora si ya existe */ }
+
+            try
+            {
+                await _database.ExecuteAsync("ALTER TABLE Proveedor ADD COLUMN NombreContacto TEXT");
+            }
+            catch { /* ignora si ya existe */ }
+
+            try
+            {
+                await _database.ExecuteAsync("ALTER TABLE Proveedor ADD COLUMN Categoria TEXT");
+            }
+            catch { /* ignora si ya existe */ }
+
+            try
+            {
+                await _database.ExecuteAsync("ALTER TABLE Proveedor ADD COLUMN Direccion TEXT");
+            }
+            catch { /* ignora si ya exista */ }
+
+            try
+            {
+                await _database.ExecuteAsync("ALTER TABLE Proveedor ADD COLUMN Calificacion INTEGER");
+            }
+            catch { /* ignora si ya exista */ }
+
+            // Crear Admin por defecto (ahora guardamos hash para coherencia)
+            await CrearUsuarioAdministradorAsync();
+
+            _inicializado = true;
+        }
+
         private async Task CrearUsuarioAdministradorAsync()
         {
-            // Verifica si ya existe algún registro en la tabla Personal
             var count = await _database.Table<Personal>().CountAsync();
-
-            // Si la tabla está vacía, crea un usuario con acceso de "Gerente"
             if (count == 0)
             {
+                // Hashar la contraseña por defecto (igual que en los ViewModels)
+                var pwd = "admin123";
+                var bytes = Encoding.UTF8.GetBytes(pwd);
+                var hash = SHA256.HashData(bytes);
+                var hashed = Convert.ToBase64String(hash);
+
                 var admin = new Personal
                 {
-                    Nombre = "gerente",        // ⬅️ CUENTA DE PRUEBA
-                    Contrasena = "admin123",   // ⬅️ CONTRASEÑA DE PRUEBA
+                    Nombre = "Gerente General",
+                    Usuario = "gerente",
+                    Contrasena = hashed,
                     Apellido = "Admin",
-                    Cargo = "Gerente",         // ⬅️ Nivel de acceso
+                    Cargo = "Gerente",
                     FechaContratacion = DateTime.Now
                 };
                 await _database.InsertAsync(admin);
             }
         }
-        // Declararamos la variable de conexión
-        private readonly SQLiteAsyncConnection _database;
 
-        // El constructor recibe la conexión por Inyección de Dependencias
-        public DatabaseService(SQLiteAsyncConnection db)
+        // --- TUS MÉTODOS CRUD (Login, Get, Save, etc.) ---
+
+        public async Task<Personal?> GetPersonalPorUsuarioAsync(string usuario)
         {
-            // Asignamos la conexión inyectada
-            _database = db;
-
-            // Crear todas las tablas en el inicio
-            _database.CreateTableAsync<Cliente>().Wait();
-            _database.CreateTableAsync<Personal>().Wait();
-
-            // Llamar a la función que crea el usuario admin
-            // NOTA: Usamos .Wait() porque estamos en el constructor, que no puede ser async
-            CrearUsuarioAdministradorAsync().Wait();
-
-            _database.CreateTableAsync<Proveedor>().Wait();
-            _database.CreateTableAsync<Producto>().Wait();
-            _database.CreateTableAsync<Factura>().Wait();
-            _database.CreateTableAsync<DetalleVenta>().Wait();
-            _database.CreateTableAsync<DetalleSuministro>().Wait();
-        }
-
-        // NOTA: SQLite.NET no requiere explícitamente definir Foreign Keys (FK) 
-        // en los atributos de la clase, las manejas por la lógica del C# 
-        // y los campos que incluyes (e.g., int IDCliente).
-        public Task<Personal> GetPersonalPorNombreAsync(string nombre)
-        {
-            // Esto resuelve el error CS1061 que tenías previamente
-            return _database.Table<Personal>()
-                            .Where(p => p.Nombre == nombre)
+            await InicializarAsync(); // Aseguramos que la BD exista antes de buscar
+            return await _database.Table<Personal>()
+                            .Where(p => p.Usuario == usuario)
                             .FirstOrDefaultAsync();
         }
 
@@ -91,37 +150,10 @@ namespace MauiApp1.Servicios
             return _database.DeleteAsync(personal);
         }
 
-
         // --- CLIENTE CRUD ---
-        // Obtener todos (READ)
         public Task<List<Cliente>> GetAllClientesAsync()
         {
             return _database.Table<Cliente>().ToListAsync();
-        }
-
-        // Obtener por ID (READ)
-        public Task<Cliente> GetClienteByIdAsync(int id)
-        {
-            return _database.Table<Cliente>().Where(c => c.IDCliente == id).FirstOrDefaultAsync();
-        }
-
-        // Guardar o Actualizar (CREATE/UPDATE)
-        public Task<int> SaveClienteAsync(Cliente cliente)
-        {
-            if (cliente.IDCliente != 0)
-            {
-                return _database.UpdateAsync(cliente); // Actualizar
-            }
-            else
-            {
-                return _database.InsertAsync(cliente); // Crear nuevo
-            }
-        }
-
-        // Eliminar (DELETE)
-        public Task<int> DeleteClienteAsync(Cliente cliente)
-        {
-            return _database.DeleteAsync(cliente);
         }
 
         // --- PROVEEDOR CRUD ---
@@ -142,11 +174,11 @@ namespace MauiApp1.Servicios
         {
             if (proveedor.IDProveedor != 0)
             {
-                return _database.UpdateAsync(proveedor); // Actualizar
+                return _database.UpdateAsync(proveedor); // Actualiza si tiene ID
             }
             else
             {
-                return _database.InsertAsync(proveedor); // Crear nuevo
+                return _database.InsertAsync(proveedor); // Crea nuevo
             }
         }
 
@@ -189,19 +221,16 @@ namespace MauiApp1.Servicios
         }
 
         // --- FACTURA CRUD ---
-        // Obtener todos (READ)
         public Task<List<Factura>> GetAllFacturasAsync()
         {
             return _database.Table<Factura>().ToListAsync();
         }
 
-        // Obtener por ID (READ)
         public Task<Factura> GetFacturaByIdAsync(int id)
         {
             return _database.Table<Factura>().Where(f => f.IDFactura == id).FirstOrDefaultAsync();
         }
 
-        // Guardar o Actualizar (CREATE/UPDATE)
         public Task<int> SaveFacturaAsync(Factura factura)
         {
             if (factura.IDFactura != 0)
@@ -214,21 +243,17 @@ namespace MauiApp1.Servicios
             }
         }
 
-        // Eliminar (DELETE)
         public Task<int> DeleteFacturaAsync(Factura factura)
         {
             return _database.DeleteAsync(factura);
         }
 
-
         // --- DETALLEVENTA CRUD ---
-        // Obtener todos (READ)
         public Task<List<DetalleVenta>> GetAllDetallesVentaAsync()
         {
             return _database.Table<DetalleVenta>().ToListAsync();
         }
 
-        // Obtener detalles por ID de Factura (READ)
         public Task<List<DetalleVenta>> GetDetallesByFacturaIdAsync(int idFactura)
         {
             return _database.Table<DetalleVenta>()
@@ -236,7 +261,6 @@ namespace MauiApp1.Servicios
                             .ToListAsync();
         }
 
-        // Guardar o Actualizar (CREATE/UPDATE)
         public Task<int> SaveDetalleVentaAsync(DetalleVenta detalle)
         {
             if (detalle.IDDetalleVenta != 0)
@@ -249,21 +273,17 @@ namespace MauiApp1.Servicios
             }
         }
 
-        // Eliminar (DELETE)
         public Task<int> DeleteDetalleVentaAsync(DetalleVenta detalle)
         {
             return _database.DeleteAsync(detalle);
         }
 
-
         // --- DETALLE SUMINISTRO CRUD ---
-        // Obtener todos (READ)
         public Task<List<DetalleSuministro>> GetAllDetallesSuministroAsync()
         {
             return _database.Table<DetalleSuministro>().ToListAsync();
         }
 
-        // Obtener detalles por Proveedor o Producto (READ, si es necesario)
         public Task<List<DetalleSuministro>> GetDetallesByProveedorIdAsync(int idProveedor)
         {
             return _database.Table<DetalleSuministro>()
@@ -271,7 +291,6 @@ namespace MauiApp1.Servicios
                             .ToListAsync();
         }
 
-        // Guardar o Actualizar (CREATE/UPDATE)
         public Task<int> SaveDetalleSuministroAsync(DetalleSuministro detalle)
         {
             if (detalle.Id != 0) // Usa el Id de SQLite.NET para el Update
@@ -284,7 +303,6 @@ namespace MauiApp1.Servicios
             }
         }
 
-        // Eliminar (DELETE)
         public Task<int> DeleteDetalleSuministroAsync(DetalleSuministro detalle)
         {
             return _database.DeleteAsync(detalle);

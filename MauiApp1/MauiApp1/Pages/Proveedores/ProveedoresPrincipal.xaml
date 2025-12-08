@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.Pages.Proveedores.ProveedoresPrincipal">
+    <Grid Padding="20" RowDefinitions="Auto,Auto,Auto,Auto,*" ColumnDefinitions="*" BackgroundColor="#0F3C3C" RowSpacing="20">
+        <!-- Encabezado -->
+        <Label Text="Bienvenido a Proveedores - Sesión de Gerente"
+               FontSize="20"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               TextColor="White"
+               Margin="0,0,0,10" />
+
+        <!-- Subtítulo -->
+        <Label Text="Proveedores de la tienda"
+               FontSize="18"
+               FontAttributes="Bold"
+               Grid.Row="1"
+               TextColor="White"
+               Margin="0,0,0,10" />
+
+        <!-- Barra de búsqueda -->
+        <SearchBar Grid.Row="2"
+                   Placeholder="Buscar proveedor o categoría"
+                   x:Name="ProveedorSearchBar"
+                   Text="{Binding SearchText}"
+                   SearchCommand="{Binding BuscarProveedorCommand}"
+                   BackgroundColor="#0B2F2F"
+                   TextColor="White"
+                   PlaceholderColor="#D2B48C" />
+
+        <!-- Botones -->
+        <HorizontalStackLayout Grid.Row="3" Spacing="10">
+            <Button Text="Agregar proveedor"
+                    Command="{Binding AgregarProveedorCommand}"
+                    BackgroundColor="#D2B48C"
+                    TextColor="Black" />
+            <Button Text="Eliminar proveedor"
+                    Command="{Binding RemoverProveedorCommand}"
+                    BackgroundColor="#D2B48C"
+                    TextColor="Black" />
+            <Button Text="Regresar"
+                    Command="{Binding RegresarInicio}"
+                    BackgroundColor="#D2B48C"
+                    TextColor="Black" />
+        </HorizontalStackLayout>
+
+        <!-- Contenido con scroll y borde -->
+        <ScrollView Grid.Row="4">
+            <Border Stroke="#D2B48C"
+                    StrokeThickness="2"
+                    Padding="10"
+                    Margin="0,10,0,0"
+                    BackgroundColor="#0B2F2F"
+                    StrokeShape="RoundRectangle 10">
+                <CollectionView ItemsSource="{Binding Proveedores}" SelectionMode="Single">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Padding="12" ColumnDefinitions="2*,1*,1*,1*,80" ColumnSpacing="16">
+                                <Label Grid.Column="0" Text="{Binding Nombre}" FontAttributes="Bold" TextColor="White" />
+                                <Label Grid.Column="1" Text="{Binding Categoria}" TextColor="White" />
+                                <Label Grid.Column="2" Text="{Binding NombreContacto}" TextColor="White" />
+                                <Label Grid.Column="3" Text="{Binding Email}" TextColor="White" LineBreakMode="TailTruncation"/>
+                                <Label Grid.Column="4" Text="{Binding Calificacion}" TextColor="White" HorizontalTextAlignment="Center"/>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Border>
+        </ScrollView>
+    </Grid>
+</ContentPage>

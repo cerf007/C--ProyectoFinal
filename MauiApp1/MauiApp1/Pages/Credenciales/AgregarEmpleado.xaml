@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.Pages.Credenciales.AgregarEmpleado">
+    <ScrollView>
+        <ScrollView.Resources>
+            <!-- Estilo para Label -->
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="Margin" Value="0,10,0,5"/>
+            </Style>
+            <!-- Otros estilos omitidos para brevedad -->
+        </ScrollView.Resources>
+
+        <Border Padding="20" BackgroundColor="#0B2F2F">
+            <VerticalStackLayout>
+                <Label Text="Agregar Nuevo Usuario"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   TextColor="White"
+                   Margin="0,0,0,20"/>
+
+                <Grid ColumnDefinitions="*,10,*">
+                    <!-- Columna izquierda -->
+                    <VerticalStackLayout Grid.Column="0">
+                        <Label Text="Nombre Completo *"/>
+                        <Entry Placeholder="Nombre completo" Text="{Binding NombreCompleto}"/>
+
+                        <Label Text="Email *"/>
+                        <Entry Placeholder="correo@ejemplo.com" Text="{Binding Email}"/>
+
+                        <Label Text="Cargo/Rol *"/>
+                        <Picker Title="Seleccionar cargo" SelectedItem="{Binding Cargo}">
+                            <Picker.Items>
+                                <x:String>Vendedor</x:String>
+                                <x:String>Administrador</x:String>
+                                <x:String>Operario</x:String>
+                            </Picker.Items>
+                        </Picker>
+                    </VerticalStackLayout>
+
+                    <!-- Columna derecha -->
+                    <VerticalStackLayout Grid.Column="2">
+                        <Label Text="Nombre de Usuario *"/>
+                        <Entry Placeholder="usuario123" Text="{Binding Usuario}"/>
+
+                        <Label Text="Contraseña *"/>
+                        <Entry Placeholder="Contraseña" IsPassword="True" Text="{Binding Contrasena}" />
+
+                        <Label Text="Departamento"/>
+                        <Entry Placeholder="Ej: Ventas, Sistemas" Text="{Binding Departamento}"/>
+                    </VerticalStackLayout>
+                </Grid>
+
+                <Label Text="Permisos" Margin="0,10,0,5"/>
+                <Editor HeightRequest="80"
+                        Text="{Binding Permisos}"
+                        BackgroundColor="#1A4D43"
+                        TextColor="#CCCCCC"/>
+
+                <HorizontalStackLayout HorizontalOptions="End" Margin="0,20,0,0">
+                    <Button Text="Cancelar"
+                        BackgroundColor="#00A083"
+                        BorderColor="White"
+                        TextColor="White"
+                        WidthRequest="120"
+                        Command="{Binding CancelarCommand}"/>
+                    <Button Text="Crear Usuario"
+                        BackgroundColor="#FF9900"
+                        BorderColor="#FF9900"
+                        TextColor="White"
+                        WidthRequest="120"
+                        Command="{Binding CrearUsuarioCommand}"/>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+        </Border>
+    </ScrollView>
+</ContentPage>

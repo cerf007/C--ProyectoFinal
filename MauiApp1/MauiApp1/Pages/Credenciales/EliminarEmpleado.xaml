@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.Pages.Credenciales.EliminarEmpleado">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15" BackgroundColor="#0B2F2F">
+
+            <!-- Filtros -->
+            <Label Text="Filtrar empleados:" TextColor="#D2B48C" FontAttributes="Bold"/>
+            <HorizontalStackLayout Spacing="10">
+                <Picker Title="Cargo"
+                    ItemsSource="{Binding CargosDisponibles}"
+                    SelectedItem="{Binding FiltroCargo}"
+                    BackgroundColor="#0F3C3C" TextColor="White" TitleColor="#D2B48C" WidthRequest="160"/>
+
+                <Picker Title="Permisos"
+                    ItemsSource="{Binding PermisosDisponibles}"
+                    SelectedItem="{Binding FiltroPermisos}"
+                    BackgroundColor="#0F3C3C" TextColor="White" TitleColor="#D2B48C" WidthRequest="160"/>
+
+                <Entry Placeholder="Nombre contiene..."
+                   Text="{Binding FiltroNombre}"
+                   BackgroundColor="#0F3C3C" TextColor="White" PlaceholderColor="#D2B48C" WidthRequest="200"/>
+
+                <Button Text="Aplicar Filtro"
+                    BackgroundColor="#D2B48C" TextColor="#0B2F2F" WidthRequest="140"
+                    Command="{Binding AplicarFiltroCommand}"/>
+            </HorizontalStackLayout>
+
+            <!--  Selección de empleado -->
+            <Label Text="Selecciona un empleado para eliminar:" TextColor="#D2B48C" FontAttributes="Bold"/>
+            <HorizontalStackLayout Spacing="12" VerticalOptions="Center">
+                <Picker Title="Empleado"
+                    ItemsSource="{Binding EmpleadosFiltrados}"
+                    ItemDisplayBinding="{Binding Nombre}"
+                    SelectedItem="{Binding EmpleadoSeleccionado}"
+                    BackgroundColor="#0F3C3C" TextColor="White" TitleColor="#D2B48C" WidthRequest="400"/>
+
+                <Button Text="Eliminar seleccionado"
+                        BackgroundColor="#D50000"
+                        TextColor="White"
+                        WidthRequest="160"
+                        Command="{Binding PrepararEliminarCommand}" />
+            </HorizontalStackLayout>
+
+            <!--  Panel de confirmación (visible sólo al preparar eliminación) -->
+            <Border Stroke="#D50000" StrokeThickness="2" BackgroundColor="#0F3C3C"
+                StrokeShape="RoundRectangle 8"
+                IsVisible="{Binding MostrarConfirmacion}">
+                <VerticalStackLayout Padding="15" Spacing="10">
+                    <Label Text="¿Seguro que deseas eliminar este empleado?"
+                       TextColor="#D2B48C" FontSize="18" FontAttributes="Bold"/>
+                    <Label Text="{Binding EmpleadoSeleccionado.Nombre}" TextColor="White" FontSize="16"/>
+
+                    <HorizontalStackLayout Spacing="15" HorizontalOptions="Center">
+                        <Button Text="Eliminar" BackgroundColor="#D50000" TextColor="White"
+                            WidthRequest="120"
+                            Command="{Binding ConfirmarEliminarCommand}" />
+                        <Button Text="Cancelar" BackgroundColor="#5F889B" TextColor="White"
+                            WidthRequest="120"
+                            Command="{Binding CancelarConfirmacionCommand}" />
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Border>
+
+            <Button Grid.Row="1"
+                Text="Regresar"
+                BackgroundColor="#D2B48C"
+                TextColor="#0B2F2F"
+                WidthRequest="120"
+                HorizontalOptions="End"
+                VerticalOptions="End"
+                Command="{Binding ComandoRegresar}"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

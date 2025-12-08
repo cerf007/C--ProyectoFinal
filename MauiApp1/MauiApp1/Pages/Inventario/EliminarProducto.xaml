@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.Pages.Inventario.EliminarProducto">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15" BackgroundColor="#0B2F2F">
+
+            <!-- Botón regresar en esquina superior derecha -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Espacio izquierdo (vacío) -->
+                <BoxView Color="Transparent" Grid.Column="0" />
+
+                <!-- Botón 'Regresar' alineado a la derecha -->
+                <Button Grid.Column="1"
+                        Text="Regresar"
+                        Clicked="OnRegresarClicked"
+                        BackgroundColor="#D2B48C"
+                        TextColor="#0B2F2F"
+                        WidthRequest="150"
+                        HeightRequest="40"
+                        CornerRadius="8"
+                        HorizontalOptions="End"
+                        VerticalOptions="Start"/>
+            </Grid>
+
+            <!-- Filtros -->
+            <Label Text="Filtrar productos:" TextColor="#D2B48C" FontAttributes="Bold"/>
+            <HorizontalStackLayout Spacing="10">
+                <Picker Title="Categoría"
+                        ItemsSource="{Binding CategoriasDisponibles}"
+                        SelectedItem="{Binding FiltroCategoria, Mode=TwoWay}"
+                        BackgroundColor="#0F3C3C" TextColor="White" TitleColor="#D2B48C" WidthRequest="160"/>
+
+                <Entry Placeholder="Nombre contiene..."
+                       Text="{Binding FiltroNombre, Mode=TwoWay}"
+                       BackgroundColor="#0F3C3C" TextColor="White" PlaceholderColor="#D2B48C" WidthRequest="200"/>
+
+                <Button Text="Aplicar Filtro"
+                        Command="{Binding AplicarFiltroCommand}"
+                        BackgroundColor="#D2B48C" TextColor="#0B2F2F" WidthRequest="140"/>
+            </HorizontalStackLayout>
+
+            <!-- Selección de producto -->
+            <Label Text="Selecciona un producto para eliminar:" TextColor="#D2B48C" FontAttributes="Bold"/>
+            <Picker Title="Producto"
+                    ItemsSource="{Binding ProductosFiltrados}"
+                    ItemDisplayBinding="{Binding Nombre}"
+                    SelectedItem="{Binding ProductoSeleccionado, Mode=TwoWay}"
+                    BackgroundColor="#0F3C3C" TextColor="White" TitleColor="#D2B48C" WidthRequest="300"/>
+
+            <!-- Panel de confirmación: visible solo cuando hay selección -->
+            <Border Stroke="#D50000" StrokeThickness="2" BackgroundColor="#0F3C3C"
+                    StrokeShape="RoundRectangle 8"
+                    IsVisible="{Binding MostrarConfirmacion}">
+                <VerticalStackLayout Padding="15" Spacing="10">
+                    <Label Text="¿Seguro que deseas eliminar este producto?"
+                           TextColor="#D2B48C" FontSize="18" FontAttributes="Bold"/>
+                    <Label Text="{Binding ProductoSeleccionado.Nombre}"
+                           TextColor="White" FontSize="16"/>
+
+                    <HorizontalStackLayout Spacing="15" HorizontalOptions="Center">
+                        <Button Text="Eliminar" BackgroundColor="#D50000" TextColor="White"
+                                WidthRequest="120"
+                                Command="{Binding EliminarCommand}"/>
+                        <Button Text="Cancelar" BackgroundColor="#5F889B" TextColor="White"
+                                WidthRequest="120"
+                                Command="{Binding CancelarCommand}"/>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

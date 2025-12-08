@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.Pages.Proveedores.EditarProveedores"
+             Title="EditarProveedores">
+    <Grid BackgroundColor="#0F3C3C">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Encabezado -->
+        <Label Text="Selecciona un proveedor para editar:"
+           TextColor="White"
+           FontSize="16"
+           Margin="0,0,0,10"
+           Grid.Row="0"/>
+
+        <!-- Selector de proveedor -->
+        <Border BackgroundColor="#0B2F2F" Stroke="#D2B48C" Padding="10"
+           StrokeShape="RoundRectangle 4,4,4,4" Margin="80,0,80,15" Grid.Row="1">
+            <VerticalStackLayout>
+                <Label Text="Proveedor" TextColor="White" Margin="0,0,0,5"/>
+                <Picker Title="Selecciona proveedor" BackgroundColor="#0B2F2F"
+                    TextColor="White" HeightRequest="70">
+                    <Picker.Items>
+                        <x:String>Distribuidora Tech Solutions</x:String>
+                    </Picker.Items>
+                </Picker>
+            </VerticalStackLayout>
+        </Border>
+
+        <!-- Formulario de edición -->
+        <ScrollView Grid.Row="2">
+
+            <VerticalStackLayout Margin="80,10,80,0">
+                <Label Text="Editar Proveedor"
+                   TextColor="White"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   Margin="0,0,0,15"/>
+
+                <!-- Campos con Entry -->
+                <Label Text="Nombre" TextColor="White" Margin="0,0,0,5"/>
+                <Entry Text="Distribuidora Tech Solutions" BackgroundColor="#0B2F2F"
+                   TextColor="White" Margin="0,0,0,15" HeightRequest="40" />
+
+                <Label Text="RFC" TextColor="White" Margin="0,0,0,5"/>
+                <Entry Text="DTS890123ABC" BackgroundColor="#0B2F2F"
+                   TextColor="White" Margin="0,0,0,15" HeightRequest="40"/>
+
+                <Label Text="Contacto" TextColor="White" Margin="0,0,0,5"/>
+                <Entry Text="Roberto Hernández" BackgroundColor="#0B2F2F"
+                   TextColor="White" Margin="0,0,0,15" HeightRequest="40"/>
+
+                <Label Text="Email" TextColor="White" Margin="0,0,0,5"/>
+                <Entry Text="roberto@techsolutions.com" BackgroundColor="#0B2F2F"
+                   TextColor="White" Margin="0,0,0,15" HeightRequest="40"/>
+
+                <Label Text="Teléfono" TextColor="White" Margin="0,0,0,5"/>
+                <Entry Text="555-1234-567" BackgroundColor="#0B2F2F"
+                   TextColor="White" Margin="0,0,0,15" HeightRequest="40"/>
+
+                <Label Text="Dirección" TextColor="White" Margin="0,0,0,5"/>
+                <Entry Text="Av. Tecnología 123, CDMX" BackgroundColor="#0B2F2F"
+                   TextColor="White" Margin="0,0,0,15" HeightRequest="40"/>
+
+                <Label Text="Categoría" TextColor="White" Margin="0,0,0,5"/>
+                <Entry Text="Electrónica" BackgroundColor="#0B2F2F"
+                   TextColor="White" Margin="0,0,0,15" HeightRequest="40"/>
+
+                <Label Text="Calificación" TextColor="White" Margin="0,0,0,5"/>
+                <Entry Text="4.8" BackgroundColor="#0B2F2F"
+                   TextColor="White" Margin="0,0,0,15" HeightRequest="40"/>
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!-- Botones -->
+        <HorizontalStackLayout Grid.Row="3" Margin="0,20,0,0">
+            <Button Text="Guardar Cambios" BackgroundColor="#D2B48C"
+                TextColor="Black" Padding="15,10" Margin="0,0,10,0"
+                FontAttributes="Bold"/>
+            <Button Text="Cancelar" BackgroundColor="#D2B48C"
+                TextColor="Black" Padding="15,10" Margin="0,0,10,0"
+                FontAttributes="Bold"/>
+            <Button Text="Regresar al inicio" BackgroundColor="#D2B48C"
+                TextColor="Black" Padding="15,10"
+                FontAttributes="Bold"/>
+        </HorizontalStackLayout>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.Pages.Sesiones.SesionEmpleado">
+    <ScrollView>
+        <Grid RowDefinitions="Auto,*" BackgroundColor="#0F3C3C">
+
+            <!-- Encabezado -->
+            <Grid Grid.Row="0" Padding="20,20,20,40">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <HorizontalStackLayout Grid.Column="0" Spacing="10" VerticalOptions="Center">
+                    <Border WidthRequest="30" HeightRequest="30" Stroke="#4A90E2" Background="#4A90E2" StrokeShape="RoundRectangle" HorizontalOptions="Start">
+                        <Label Text="👤" TextColor="#D2B48C" FontSize="16" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    </Border>
+                    <VerticalStackLayout Spacing="2">
+                        <Label Text="Sesión de Empleado" FontSize="18" FontAttributes="Bold" TextColor="#D2B48C"/>
+                    </VerticalStackLayout>
+                </HorizontalStackLayout>
+
+                <Label Grid.Column="1" Text="Ventas" FontSize="16" TextColor="#D2B48C" VerticalOptions="Center"/>
+            </Grid>
+
+            <!-- Opciones -->
+            <VerticalStackLayout Grid.Row="1" Padding="0,50,0,0" HorizontalOptions="Center" Spacing="30">
+
+                <VerticalStackLayout Spacing="10" HorizontalOptions="Center">
+                    <Label Text="Seleccione una opción" FontSize="24" FontAttributes="Bold" TextColor="#D2B48C" HorizontalOptions="Center"/>
+                    <Label Text="Elija la función que desea realizar" FontSize="16" TextColor="#D2B48C" HorizontalOptions="Center"/>
+                </VerticalStackLayout>
+
+                <HorizontalStackLayout Spacing="30" HorizontalOptions="Center">
+
+                    <!-- Generar Factura (ahora táctil) -->
+                    <Border BackgroundColor="#0B2F2F" Stroke="#D2B48C" StrokeThickness="2" StrokeShape="RoundRectangle" WidthRequest="300" HeightRequest="200" Padding="20" >
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding GenerarFacturaCommand}" NumberOfTapsRequired="1"/>
+                        </Border.GestureRecognizers>
+                        <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="10">
+                            <Border WidthRequest="60" HeightRequest="60" Stroke="#4A90E2" BackgroundColor="#F0F8FF" StrokeThickness="1" StrokeShape="RoundRectangle" HorizontalOptions="Center">
+                                <Label Text="📄" FontSize="30" TextColor="#4A90E2" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            </Border>
+                            <Label Text="Generar Factura" FontSize="18" FontAttributes="Bold" TextColor="#D2B48C" HorizontalOptions="Center"/>
+                            <Label Text="Cree facturas para clientes y registre ventas" FontSize="14" TextColor="#D2B48C" HorizontalTextAlignment="Center" MaxLines="2"/>
+                        </VerticalStackLayout>
+                    </Border>
+
+                    <!-- Comprobar Existencia (ahora táctil) -->
+                    <Border BackgroundColor="#0B2F2F" Stroke="#D2B48C" StrokeThickness="2" StrokeShape="RoundRectangle" WidthRequest="300" HeightRequest="200" Padding="20">
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ComprobarExistenciaCommand}" NumberOfTapsRequired="1"/>
+                        </Border.GestureRecognizers>
+                        <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="10">
+                            <Border WidthRequest="60" HeightRequest="60" Stroke="#7ED321" BackgroundColor="#F0FFF0" StrokeThickness="1" StrokeShape="RoundRectangle" HorizontalOptions="Center">
+                                <Label Text="📦" FontSize="30" TextColor="#7ED321" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            </Border>
+                            <Label Text="Comprobar Existencia" FontSize="18" FontAttributes="Bold" TextColor="#D2B48C" HorizontalOptions="Center"/>
+                            <Label Text="Consulte el inventario y disponibilidad de productos" FontSize="14" TextColor="#D2B48C" HorizontalTextAlignment="Center" MaxLines="2"/>
+                        </VerticalStackLayout>
+                    </Border>
+
+                </HorizontalStackLayout>
+                <Button
+                       Text="Cerrar Sesión"
+                       BackgroundColor="#D2B48C"
+                       TextColor="Black"
+                       HorizontalOptions="End"
+                       VerticalOptions="End"
+                       Command="{Binding RegresarCommand}"/>
+            </VerticalStackLayout>
+
+        </Grid>
+
+
+    </ScrollView>
+</ContentPage>

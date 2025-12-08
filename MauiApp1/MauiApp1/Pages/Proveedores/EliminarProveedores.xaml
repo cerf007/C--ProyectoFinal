@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.Pages.Proveedores.EliminarProveedores"
+             Title="EliminarProveedores">
+    <ContentPage.Resources>
+        <!-- Estilo para Label -->
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="Margin" Value="0,10,0,5"/>
+        </Style>
+
+        <!-- Estilo para Picker -->
+        <Style TargetType="Picker">
+            <Setter Property="HeightRequest" Value="35"/>
+            <Setter Property="BackgroundColor" Value="#1A4D43"/>
+            <Setter Property="TextColor" Value="#00A083"/>
+            <Setter Property="Margin" Value="0,0,0,20"/>
+        </Style>
+
+        <!-- Estilo para Button -->
+        <Style TargetType="Button">
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <Grid Padding="20" BackgroundColor="#0B2F2F">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!-- Encabezado -->
+            <VerticalStackLayout Grid.Row="0" Margin="0,0,0,20">
+                <Label Text="BIENVENIDO A PROVEEDORES - SESIÓN DE GERENTE"
+                       FontSize="20" FontAttributes="Bold"
+                       HorizontalOptions="Center" Margin="0,0,0,10"/>
+                <Label Text="Eliminar Proveedor" FontSize="18" FontAttributes="Bold"/>
+                <Label Text="Selecciona un proveedor para eliminar:" FontSize="14" Margin="0,5,0,0"/>
+            </VerticalStackLayout>
+
+            <!-- Selección de proveedor -->
+            <VerticalStackLayout Grid.Row="1">
+                <Label Text="Proveedor"/>
+                <Picker Title="Selecciona un proveedor"
+                        SelectedIndex="0" HeightRequest="80">
+                    <Picker.Items>
+                        <x:String>Distribuidora Tech Solutions</x:String>
+                        <x:String>Materiales Industriales S.A.</x:String>
+                        <x:String>Servicios de Limpieza Rápida</x:String>
+                    </Picker.Items>
+                </Picker>
+
+                <!-- Confirmación -->
+                <Border Stroke="Red" StrokeThickness="1" Padding="15" Margin="0,20,0,0"
+                        Background="#1A4D43" StrokeShape="RoundRectangle 8">
+                    <VerticalStackLayout>
+                        <Label Text="¿Seguro que deseas eliminar este proveedor?"
+                               FontSize="16" Margin="0,0,0,10"/>
+                        <HorizontalStackLayout HorizontalOptions="Center">
+                            <Button Text="Eliminar" BackgroundColor="#E74C3C" TextColor="White" WidthRequest="100"/>
+                            <Button Text="Cancelar" BackgroundColor="#00A083" TextColor="White" WidthRequest="100"/>
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+                </Border>
+            </VerticalStackLayout>
+
+            <!-- Botón regresar -->
+            <HorizontalStackLayout Grid.Row="2" HorizontalOptions="End" Margin="0,20,0,0">
+                <Button Text="Regresar" BackgroundColor="#FF9900" TextColor="White" WidthRequest="100"/>
+            </HorizontalStackLayout>
+        </Grid>
+    </ScrollView>
+</ContentPage>

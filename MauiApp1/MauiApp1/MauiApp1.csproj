@@ -57,10 +57,102 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Essentials" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.0" />
+		<PackageReference Include="OxyPlot.Core" Version="2.2.0" />
 		<PackageReference Include="sqlite-net-pcl" Version="1.9.172" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Pages\Credenciales\CredencialesPrincipal.xaml.cs">
+	    <DependentUpon>CredencialesPrincipal.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Pages\Credenciales\AgregarEmpleado.xaml.cs">
+	    <DependentUpon>AgregarEmpleado.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Pages\Credenciales\EliminarEmpleado.xaml.cs">
+	    <DependentUpon>EliminarEmpleado.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Pages\Credenciales\EditarEmpleado.xaml.cs">
+	    <DependentUpon>EditarEmpleado.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Pages\Empleados\Factura.xaml.cs">
+	    <DependentUpon>Factura.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Pages\Inventario\InventarioPrincipal.xaml.cs">
+	    <DependentUpon>InventarioPrincipal.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Pages\Inventario\EditarProducto.xaml.cs">
+	    <DependentUpon>EditarProducto.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Pages\Inventario\AgregarProducto.xaml.cs">
+	    <DependentUpon>AgregarProducto.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Pages\Inventario\EliminarProducto.xaml.cs">
+	    <DependentUpon>EliminarProducto.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Pages\Proveedores\AgregarProveedores.xaml.cs">
+	    <DependentUpon>AgregarProveedores.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Pages\Sesiones\SesionEmpleado.xaml.cs">
+	    <DependentUpon>SesionEmpleado.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Pages\Sesiones\SesionGerente.xaml.cs">
+	    <DependentUpon>SesionGerente.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Pages\Credenciales\CredencialesPrincipal.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Credenciales\AgregarEmpleado.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Credenciales\EliminarEmpleado.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Credenciales\EditarEmpleado.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Empleados\Factura.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Inventario\InventarioPrincipal.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Inventario\EditarProducto.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Inventario\AgregarProducto.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Inventario\EliminarProducto.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Proveedores\AgregarProveedores.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Proveedores\EditarProveedores.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Proveedores\EliminarProveedores.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Proveedores\ProveedoresPrincipal.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Reportes\ReportesPrincipal.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Sesiones\SesionGerente.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Sesiones\SesionEmpleado.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 </Project>

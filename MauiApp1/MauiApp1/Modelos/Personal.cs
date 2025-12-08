@@ -1,32 +1,39 @@
 ﻿using SQLite;
-using System;
 
 namespace MauiApp1.Modelos
 {
     public class Personal
     {
-        // Clave Primaria Autoincremental
         [PrimaryKey, AutoIncrement]
         public int IDPersonal { get; set; }
 
-        //Campo usado como "Cuenta" o Username para el inicio de sesión
-        [MaxLength(100), Unique]
-        public string Nombre { get; set; }
+        // Usuario para login (ej: jperez)
+        [MaxLength(50), Unique]
+        public string Usuario { get; set; } = string.Empty;
+
+        // Nombre real de la persona (ej: Juan)
+        [MaxLength(100)]
+        public string Nombre { get; set; } = string.Empty;
 
         [MaxLength(100)]
-        public string Apellido { get; set; }
+        public string Apellido { get; set; } = string.Empty;
 
-        //Campo añadido para la validación de credenciales
+        // Contraseña guardada (hash Base64 recomendado)
+        public string Contrasena { get; set; } = string.Empty;
+
+        // Nuevo campo: Email (opcional)
+        [MaxLength(200)]
+        public string Email { get; set; } = string.Empty;
+
+        // Nuevo campo: Departamento (opcional)
         [MaxLength(100)]
-        public string Contrasena { get; set; }
+        public string Departamento { get; set; } = string.Empty;
 
-        //Campo usado para definir el nivel de acceso (Gerente, Trabajador)
+        // Cargo / rol
         [MaxLength(50)]
-        public string Cargo { get; set; }
+        public string Cargo { get; set; } = string.Empty;
 
         public string Permisos { get; set; } = string.Empty;
-
         public DateTime FechaContratacion { get; set; } = DateTime.Now;
-
     }
 }

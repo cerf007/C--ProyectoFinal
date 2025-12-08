@@ -26,5 +26,6 @@ namespace MauiApp1.Modelos
 
         // (FK) del Proveedor
         public int IDProveedor { get; set; }
+        public int Existencia { get; internal set; }
     }
 }

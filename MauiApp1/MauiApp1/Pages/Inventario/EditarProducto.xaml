@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.Pages.Inventario.EditarProducto">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15" BackgroundColor="#0B2F2F">
+
+            <!-- 🔽 Selección de producto -->
+            <Label Text="Selecciona un producto para editar:" TextColor="#D2B48C" FontAttributes="Bold"/>
+            <Picker ItemsSource="{Binding Productos}" 
+                    ItemDisplayBinding="{Binding Nombre}" 
+                    SelectedItem="{Binding ProductoSeleccionado, Mode=TwoWay}"
+                    BackgroundColor="#0F3C3C" 
+                    TextColor="White" 
+                    TitleColor="#D2B48C"
+                    Title="Producto"/>
+
+            <!-- 📝 Formulario de edición -->
+            <Border Stroke="#D2B48C" StrokeThickness="2" BackgroundColor="#0F3C3C" StrokeShape="RoundRectangle 8">
+                <VerticalStackLayout Padding="15" Spacing="10">
+
+                    <Label Text="Editar Producto" TextColor="#D2B48C" FontSize="22" FontAttributes="Bold"/>
+
+                    <Entry Placeholder="ID Producto" Text="{Binding ProductoSeleccionado.IDProducto, Mode=TwoWay}" 
+                           IsEnabled="False" BackgroundColor="#0B2F2F" TextColor="White" PlaceholderColor="#D2B48C"/>
+
+                    <Entry Placeholder="Nombre" Text="{Binding ProductoSeleccionado.Nombre, Mode=TwoWay}" 
+                           BackgroundColor="#0B2F2F" TextColor="White" PlaceholderColor="#D2B48C"/>
+
+                    <Editor Placeholder="Descripción" Text="{Binding ProductoSeleccionado.Descripcion, Mode=TwoWay}" 
+                            BackgroundColor="#0B2F2F" TextColor="White" PlaceholderColor="#D2B48C" HeightRequest="80"/>
+
+                    <Entry Placeholder="Precio Unitario" Text="{Binding ProductoSeleccionado.PrecioUnitario, Mode=TwoWay}" 
+                           Keyboard="Numeric" BackgroundColor="#0B2F2F" TextColor="White" PlaceholderColor="#D2B48C"/>
+
+                    <Entry Placeholder="Costo Unitario" Text="{Binding ProductoSeleccionado.CostoUnitario, Mode=TwoWay}" 
+                           Keyboard="Numeric" BackgroundColor="#0B2F2F" TextColor="White" PlaceholderColor="#D2B48C"/>
+
+                    <!-- Corregido: modelo usa 'Existencias' -->
+                    <Entry Placeholder="Existencia" Text="{Binding ProductoSeleccionado.Existencias, Mode=TwoWay}" 
+                           Keyboard="Numeric" BackgroundColor="#0B2F2F" TextColor="White" PlaceholderColor="#D2B48C"/>
+
+                    <Entry Placeholder="Stock Mínimo" Text="{Binding ProductoSeleccionado.StockMinimo, Mode=TwoWay}" 
+                           Keyboard="Numeric" BackgroundColor="#0B2F2F" TextColor="White" PlaceholderColor="#D2B48C"/>
+
+                    <Picker Title="Categoría" ItemsSource="{Binding CategoriasDisponibles}" 
+                            SelectedItem="{Binding ProductoSeleccionado.Categoria, Mode=TwoWay}" 
+                            BackgroundColor="#0B2F2F" TextColor="White" TitleColor="#D2B48C"/>
+
+                    <HorizontalStackLayout Spacing="15" HorizontalOptions="Center">
+                        <Button Text="Guardar Cambios" Command="{Binding GuardarCommand}" BackgroundColor="#D2B48C" TextColor="#0B2F2F" WidthRequest="150"/>
+                        <Button Text="Cancelar" Command="{Binding CancelarCommand}" BackgroundColor="#D50000" TextColor="White" WidthRequest="100"/>
+                        <Button Text="Regresar al incio" Clicked="OnRegresarClicked" BackgroundColor="#D2B48C" TextColor="Black" WidthRequest="200"/>
+                    </HorizontalStackLayout>
+
+                </VerticalStackLayout>
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.Pages.Reportes.ReportesPrincipal"
+             xmlns:vm="clr-namespace:MauiApp1.ViewModels.ReportesVM"
+             Title="Reportes">
+    <ContentPage.BindingContext>
+        <vm:ReportesPrincipalVM />
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <Grid BackgroundColor="#2C4744" RowDefinitions="Auto,*,Auto">
+
+            <!-- Encabezado -->
+            <VerticalStackLayout Grid.Row="0" Margin="20,40,20,20" BackgroundColor="#0B2F2F" Padding="12" Spacing="6">
+                <Label Text="📈 Panel de Reportes" TextColor="#D2B48C" FontSize="28" FontAttributes="Bold" />
+                <Label Text="Visualización y descarga de indicadores clave." TextColor="#D2B48C" FontSize="16" Margin="0,5,0,0"/>
+            </VerticalStackLayout>
+
+            <!-- Contenido principal -->
+            <Grid Grid.Row="1" ColumnDefinitions="Auto, *" ColumnSpacing="12" Padding="20">
+                <ListView Grid.Column="0"
+                          ItemsSource="{Binding Reportes}"
+                          SelectedItem="{Binding ReporteSeleccionado, Mode=TwoWay}"
+                          BackgroundColor="#0B2F2F"
+                          WidthRequest="400"
+                          SelectionMode="Single"
+                          HorizontalOptions="Start"
+                          VerticalOptions="Start">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="10" BackgroundColor="#0B2F2F">
+                                    <VerticalStackLayout Spacing="8">
+                                        <Label Text="{Binding}" TextColor="#D1B89F" FontSize="16" FontAttributes="Bold"/>
+                                        <Button Text="Ver Detalle"
+                                                BackgroundColor="#D1B89F"
+                                                TextColor="Black"
+                                                CornerRadius="5"
+                                                Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.VerDetalleCommand}"
+                                                CommandParameter="{Binding .}"/>
+                                    </VerticalStackLayout>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <Border Grid.Column="1"
+                        Stroke="#D1B89F"
+                        BackgroundColor="#0B2F2F"
+                        StrokeThickness="2"
+                        Padding="16"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand">
+                    <VerticalStackLayout Spacing="10">
+                        <Label Text="Previsualización" TextColor="#D2B48C" FontSize="20" FontAttributes="Bold"/>
+                        <Label Text="Selecciona un reporte para ver detalles o exportarlo." TextColor="White"/>
+                        <BoxView Color="#0F3C3C" HeightRequest="300" CornerRadius="6"/>
+                    </VerticalStackLayout>
+                </Border>
+            </Grid>
+
+            <!-- Botones inferiores -->
+            <HorizontalStackLayout Grid.Row="2" Spacing="12" Padding="20" HorizontalOptions="FillAndExpand">
+                <Button Text="Regresar"
+                        BackgroundColor="#D1B89F"
+                        TextColor="Black"
+                        HorizontalOptions="Start"
+                        Command="{Binding RegresarCommand}" />
+                <Button Text="Exportar Reportes"
+                        BackgroundColor="#D1B89F"
+                        TextColor="Black"
+                        HorizontalOptions="EndAndExpand"
+                        Command="{Binding ExportarCommand}" />
+            </HorizontalStackLayout>
+
+        </Grid>
+    </ScrollView>
+</ContentPage>

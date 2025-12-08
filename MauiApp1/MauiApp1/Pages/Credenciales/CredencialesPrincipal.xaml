@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.Pages.Credenciales.CredencialesPrincipal"
+             x:Name="RootPage">
+    <Grid RowDefinitions="Auto,Auto,*,Auto" Padding="20" RowSpacing="18" BackgroundColor="#0B2F2F">
+
+        <!-- Row 0: filtros + botón regresar a la derecha -->
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <HorizontalStackLayout Grid.Column="0" Spacing="12" Margin="0,0,0,6" VerticalOptions="Center">
+                <Label Text="Filtrar por:" TextColor="#D2B48C" FontAttributes="Bold" VerticalOptions="Center" />
+                <Picker Title="Nombre" ItemsSource="{Binding NombresDisponibles}" SelectedItem="{Binding FiltroNombre}"
+                        BackgroundColor="#0F3C3C" TextColor="White" TitleColor="#D2B48C" WidthRequest="140"/>
+                <Picker Title="Permisos" ItemsSource="{Binding PermisosDisponibles}" SelectedItem="{Binding FiltroPermisos}"
+                        BackgroundColor="#0F3C3C" TextColor="White" TitleColor="#D2B48C" WidthRequest="160"/>
+                <Picker Title="Cargo" ItemsSource="{Binding CargosDisponibles}" SelectedItem="{Binding FiltroCargo}"
+                        BackgroundColor="#0F3C3C" TextColor="White" TitleColor="#D2B48C" WidthRequest="160"/>
+            </HorizontalStackLayout>
+
+            <!-- Botón Regresar (gerente) -->
+            <Button Grid.Column="1"
+                    Text="Regresar"
+                    Command="{Binding RegresarCommand}"
+                    BackgroundColor="#D2B48C"
+                    TextColor="#0B2F2F"
+                    WidthRequest="140"
+                    HeightRequest="36"
+                    HorizontalOptions="End"
+                    VerticalOptions="Center"
+                    Margin="10,0,0,0"/>
+        </Grid>
+
+        <Grid Grid.Row="1" ColumnDefinitions="60,2*,140,140,140,120,120" ColumnSpacing="18" Padding="8" BackgroundColor="#0F3C3C">
+            <Label Grid.Column="0" Text="ID" TextColor="#D2B48C" FontAttributes="Bold"/>
+            <Label Grid.Column="1" Text="Nombre completo" TextColor="#D2B48C" FontAttributes="Bold"/>
+            <Label Grid.Column="2" Text="Usuario" TextColor="#D2B48C" FontAttributes="Bold"/>
+            <Label Grid.Column="3" Text="Email" TextColor="#D2B48C" FontAttributes="Bold"/>
+            <Label Grid.Column="4" Text="Permisos" TextColor="#D2B48C" FontAttributes="Bold" HorizontalOptions="Center"/>
+            <Label Grid.Column="5" Text="Cargo" TextColor="#D2B48C" FontAttributes="Bold" HorizontalOptions="Center"/>
+            <Label Grid.Column="6" Text="Acción" TextColor="#D2B48C" FontAttributes="Bold" HorizontalOptions="Center"/>
+        </Grid>
+
+        <CollectionView Grid.Row="2" ItemsSource="{Binding PersonalFiltrado}" SelectionMode="Single" BackgroundColor="#0F3C3C" Margin="0,6,0,6">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid ColumnDefinitions="60,2*,140,140,140,120,120" ColumnSpacing="18" Padding="12" BackgroundColor="#0F3C3C" Margin="0,2">
+                        <Label Grid.Column="0" Text="{Binding IDPersonal}" TextColor="White" VerticalOptions="Center" HorizontalOptions="Start"/>
+                        <Label Grid.Column="1" Text="{Binding Nombre}" TextColor="White" VerticalOptions="Center" HorizontalOptions="Start"/>
+                        <Label Grid.Column="2" Text="{Binding Usuario}" TextColor="White" VerticalOptions="Center" HorizontalOptions="Start"/>
+                        <Label Grid.Column="3" Text="{Binding Email}" TextColor="White" VerticalOptions="Center" HorizontalOptions="Start" LineBreakMode="TailTruncation"/>
+                        <Label Grid.Column="4" Text="{Binding Permisos}" TextColor="White" VerticalOptions="Center" HorizontalOptions="Start" LineBreakMode="TailTruncation"/>
+                        <Label Grid.Column="5" Text="{Binding Cargo}" TextColor="White" VerticalOptions="Center" HorizontalOptions="End"/>
+                        <!-- Botón Restablecer: envía la entidad completa como parámetro -->
+                        <Button Grid.Column="6"
+                                Text="Restablecer"
+                                BackgroundColor="#FF9900"
+                                TextColor="White"
+                                WidthRequest="100"
+                                Command="{Binding Source={x:Reference RootPage}, Path=BindingContext.RestablecerContrasenaCommand}"
+                                CommandParameter="{Binding .}" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <HorizontalStackLayout Grid.Row="3" Spacing="15" HorizontalOptions="Center">
+            <Button Text="Agregar Usuario" BackgroundColor="#D2B48C" TextColor="#0B2F2F" WidthRequest="140" Command="{Binding AgregarUsuarioCommand}" />
+            <Button Text="Editar Usuario" BackgroundColor="#0F3C3C" TextColor="White" WidthRequest="140" Command="{Binding EditarUsuarioCommand}" />
+            <Button Text="Eliminar Usuario" BackgroundColor="#D50000" TextColor="White" WidthRequest="140" Command="{Binding EliminarUsuarioCommand}" />
+        </HorizontalStackLayout>
+
+    </Grid>
+</ContentPage>

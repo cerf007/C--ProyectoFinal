@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.Pages.Sesiones.SesionGerente">
+    <ScrollView>
+        <VerticalStackLayout Padding="40" Spacing="30" BackgroundColor="#0F3C3C">
+
+            <!-- Encabezado -->
+            <Grid ColumnDefinitions="*,Auto" RowDefinitions="Auto,Auto">
+                <HorizontalStackLayout Grid.Row="0" Spacing="10">
+                    <Border WidthRequest="40" HeightRequest="40" BackgroundColor="#8D52F7">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="5"/>
+                        </Border.StrokeShape>
+                        <Label Text="👤" FontSize="20" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    </Border>
+                    <VerticalStackLayout>
+                        <Label Text="Panel de Gerencia" FontSize="22" FontAttributes="Bold" TextColor="#D2B48C"/>
+                    </VerticalStackLayout>
+                </HorizontalStackLayout>
+
+                <!-- Botón Cerrar Sesión en la esquina superior izquierda, debajo del título -->
+                <Button Grid.Row="1"
+                        Grid.Column="0"
+                        Text="Cerrar Sesión"
+                        FontSize="16"
+                        TextColor="Black"
+                        BackgroundColor="#D2B48C"
+                        WidthRequest="140"
+                        HeightRequest="36"
+                        HorizontalOptions="Start"
+                        VerticalOptions="Start"
+                        Margin="0,8,0,0"
+                        Command="{Binding CerrarSesionCommand}" />
+            </Grid>
+
+            <!-- Subtítulo -->
+            <VerticalStackLayout HorizontalOptions="Center">
+                <Label Text="Panel de Control" FontSize="24" FontAttributes="Bold" TextColor="#D2B48C"/>
+                <Label Text="Seleccione el módulo al que desea acceder" FontSize="16" TextColor="#D2B48C"/>
+            </VerticalStackLayout>
+
+            <!-- Módulos -->
+            <Grid ColumnDefinitions="*,30,*" RowDefinitions="Auto,30,Auto" ColumnSpacing="30" RowSpacing="30" HorizontalOptions="Center">
+
+                <!-- Proveedores -->
+                <Border Grid.Row="0" Grid.Column="0"
+                        BackgroundColor="#0B2F2F"
+                        Stroke="#D2B48C"
+                        StrokeThickness="2"
+                        Padding="24"
+                        WidthRequest="300"
+                        HeightRequest="280">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="10"/>
+                    </Border.StrokeShape>
+
+                    <Grid RowDefinitions="Auto,Auto,*,Auto" ColumnDefinitions="*">
+                        <Border WidthRequest="70" HeightRequest="70" BackgroundColor="#E0ECFF" Grid.Row="0" HorizontalOptions="Center">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="35"/>
+                            </Border.StrokeShape>
+                            <Label Text="📦" FontSize="36" TextColor="#0B2F2F" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        </Border>
+
+                        <VerticalStackLayout Grid.Row="1" Spacing="4" HorizontalOptions="Center">
+                            <Label Text="Proveedores" FontSize="18" FontAttributes="Bold" TextColor="#D2B48C" Margin="0,6,0,0" HorizontalOptions="Center"/>
+                            <Label Text="Gestione y consulte información de proveedores" FontSize="14" TextColor="#D2B48C" HorizontalOptions="Center" HorizontalTextAlignment="Center" Margin="8,0,8,0"/>
+                        </VerticalStackLayout>
+
+                        <!-- Spacer en Grid.Row="2" para empujar el botón hacia abajo y mantener alineación -->
+                        <Button Grid.Row="3"
+                                Text="Ingresar"
+                                WidthRequest="120"
+                                HeightRequest="36"
+                                Margin="0,6,0,0"
+                                HorizontalOptions="Center"
+                                BackgroundColor="#D2B48C"
+                                TextColor="Black"
+                                CornerRadius="8"
+                                Command="{Binding IngresarProveedoresCommand}" />
+                    </Grid>
+                </Border>
+
+                <!-- Inventario -->
+                <Border Grid.Row="0" Grid.Column="2"
+                        BackgroundColor="#0B2F2F"
+                        Stroke="#D2B48C"
+                        StrokeThickness="2"
+                        Padding="24"
+                        WidthRequest="300"
+                        HeightRequest="280">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="10"/>
+                    </Border.StrokeShape>
+
+                    <Grid RowDefinitions="Auto,Auto,*,Auto" ColumnDefinitions="*">
+                        <Border WidthRequest="70" HeightRequest="70" BackgroundColor="#E3F7E5" Grid.Row="0" HorizontalOptions="Center">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="35"/>
+                            </Border.StrokeShape>
+                            <Label Text="📋" FontSize="36" TextColor="#44BB55" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        </Border>
+
+                        <VerticalStackLayout Grid.Row="1" Spacing="4" HorizontalOptions="Center">
+                            <Label Text="Inventario" FontSize="18" FontAttributes="Bold" TextColor="#D2B48C" Margin="0,6,0,0" HorizontalOptions="Center"/>
+                            <Label Text="Administre productos y control de stock" FontSize="14" TextColor="#D2B48C" HorizontalOptions="Center" HorizontalTextAlignment="Center" Margin="8,0,8,0"/>
+                        </VerticalStackLayout>
+
+                        <Button Grid.Row="3"
+                                Text="Ingresar"
+                                WidthRequest="120"
+                                HeightRequest="36"
+                                Margin="0,6,0,0"
+                                HorizontalOptions="Center"
+                                BackgroundColor="#D2B48C"
+                                TextColor="Black"
+                                CornerRadius="8"
+                                Command="{Binding IngresarInventarioCommand}" />
+                    </Grid>
+                </Border>
+
+                <!-- Credenciales -->
+                <Border Grid.Row="2" Grid.Column="0"
+                        BackgroundColor="#0B2F2F"
+                        Stroke="#D2B48C"
+                        StrokeThickness="2"
+                        Padding="24"
+                        WidthRequest="300"
+                        HeightRequest="280">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="10"/>
+                    </Border.StrokeShape>
+
+                    <Grid RowDefinitions="Auto,Auto,*,Auto" ColumnDefinitions="*">
+                        <Border WidthRequest="70" HeightRequest="70" BackgroundColor="#FFECE0" Grid.Row="0" HorizontalOptions="Center">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="35"/>
+                            </Border.StrokeShape>
+                            <Label Text="🔐" FontSize="36" TextColor="#FF8C40" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        </Border>
+
+                        <VerticalStackLayout Grid.Row="1" Spacing="4" HorizontalOptions="Center">
+                            <Label Text="Credenciales" FontSize="18" FontAttributes="Bold" TextColor="#D2B48C" Margin="0,6,0,0" HorizontalOptions="Center"/>
+                            <Label Text="Gestione usuarios y permisos del sistema" FontSize="14" TextColor="#D2B48C" HorizontalOptions="Center" HorizontalTextAlignment="Center" Margin="8,0,8,0"/>
+                        </VerticalStackLayout>
+
+                        <Button Grid.Row="3"
+                                Text="Ingresar"
+                                WidthRequest="120"
+                                HeightRequest="36"
+                                Margin="0,6,0,0"
+                                HorizontalOptions="Center"
+                                BackgroundColor="#D2B48C"
+                                TextColor="Black"
+                                CornerRadius="8"
+                                Command="{Binding IngresarCredencialesCommand}" />
+                    </Grid>
+                </Border>
+
+                <!-- Reportes -->
+                <Border Grid.Row="2" Grid.Column="2"
+                        BackgroundColor="#0B2F2F"
+                        Stroke="#D2B48C"
+                        StrokeThickness="2"
+                        Padding="24"
+                        WidthRequest="300"
+                        HeightRequest="280">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="10"/>
+                    </Border.StrokeShape>
+
+                    <Grid RowDefinitions="Auto,Auto,*,Auto" ColumnDefinitions="*">
+                        <Border WidthRequest="70" HeightRequest="70" BackgroundColor="#E9E0F7" Grid.Row="0" HorizontalOptions="Center">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="35"/>
+                            </Border.StrokeShape>
+                            <Label Text="📊" FontSize="36" TextColor="#8D52F7" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        </Border>
+
+                        <VerticalStackLayout Grid.Row="1" Spacing="4" HorizontalOptions="Center">
+                            <Label Text="Reportes" FontSize="18" FontAttributes="Bold" TextColor="#D2B48C" Margin="0,6,0,0" HorizontalOptions="Center"/>
+                            <Label Text="Consulte estadísticas y reportes del negocio" FontSize="14" TextColor="#D2B48C" HorizontalOptions="Center" HorizontalTextAlignment="Center" Margin="8,0,8,0"/>
+                        </VerticalStackLayout>
+
+                        <Button Grid.Row="3"
+                                Text="Ingresar"
+                                WidthRequest="120"
+                                HeightRequest="36"
+                                Margin="0,6,0,0"
+                                HorizontalOptions="Center"
+                                BackgroundColor="#D2B48C"
+                                TextColor="Black"
+                                CornerRadius="8"
+                                Command="{Binding IngresarReportesCommand}" />
+                    </Grid>
+                </Border>
+            </Grid>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

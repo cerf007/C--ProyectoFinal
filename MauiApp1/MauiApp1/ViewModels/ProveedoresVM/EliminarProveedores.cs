@@ -1,0 +1,10 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace MauiApp1.ViewModels.ProveedoresVM
+{
+    internal class EliminarProveedores
+    {
+    }
+}

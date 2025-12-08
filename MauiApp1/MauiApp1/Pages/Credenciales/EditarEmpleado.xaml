@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.Pages.Credenciales.EditarEmpleado">
+    <ScrollView>
+
+        <VerticalStackLayout Padding="20" Spacing="15" BackgroundColor="#0F3C3C">
+
+            <Button Text="Volver"
+                    BackgroundColor="#5F889B"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    WidthRequest="120"
+                    HorizontalOptions="Start"
+                    Command="{Binding VolverCommand}"/>
+
+            <VerticalStackLayout Padding="20" Spacing="15" BackgroundColor="#0B2F2F">
+
+                <!-- 🔍 Filtros -->
+                <HorizontalStackLayout Spacing="10">
+                    <Picker Title="Cargo"
+                            ItemsSource="{Binding CargosDisponibles}"
+                            SelectedItem="{Binding FiltroCargo}"
+                            BackgroundColor="#0F3C3C" TextColor="White" TitleColor="#D2B48C" WidthRequest="160"/>
+
+                    <Picker Title="Permisos"
+                            ItemsSource="{Binding PermisosDisponibles}"
+                            SelectedItem="{Binding FiltroPermisos}"
+                            BackgroundColor="#0F3C3C" TextColor="White" TitleColor="#D2B48C" WidthRequest="160"/>
+                </HorizontalStackLayout>
+                <!-- 🔽 Picker con lista filtrada -->
+                <Label Text="Selecciona un empleado:" TextColor="#D2B48C" FontAttributes="Bold"/>
+                <Picker Title="Empleado"
+                        ItemsSource="{Binding EmpleadosFiltrados}"
+                        ItemDisplayBinding="{Binding Nombre}"
+                        SelectedItem="{Binding EmpleadoSeleccionado}"
+                        BackgroundColor="#0F3C3C" TextColor="White" TitleColor="#D2B48C" WidthRequest="300"
+                        HorizontalOptions="Start"/>
+            </VerticalStackLayout>
+            <!-- 📝 Formulario de edición -->
+            <Border Stroke="#D2B48C" StrokeThickness="3" BackgroundColor="#0F3C3C" StrokeShape="RoundRectangle 12"
+                    IsVisible="{Binding EmpleadoSeleccionado}">
+                <VerticalStackLayout Padding="18" Spacing="12">
+
+                    <Label Text="Editar datos del empleado" TextColor="#D2B48C" FontSize="20" FontAttributes="Bold"/>
+
+                    <Grid ColumnDefinitions="*,*" ColumnSpacing="12">
+                        <Entry Placeholder="Nombre" Text="{Binding EmpleadoSeleccionado.Nombre}" 
+                                BackgroundColor="#0B2F2F" TextColor="White" PlaceholderColor="#D2B48C"/>
+                        <Entry Placeholder="Apellido" Text="{Binding EmpleadoSeleccionado.Apellido}" 
+                                BackgroundColor="#0B2F2F" TextColor="White" PlaceholderColor="#D2B48C"/>
+                    </Grid>
+
+                    <Picker Title="Permisos" ItemsSource="{Binding PermisosDisponibles}" 
+                            SelectedItem="{Binding EmpleadoSeleccionado.Permisos}" 
+                            BackgroundColor="#0B2F2F" TextColor="White" TitleColor="#D2B48C"/>
+
+                    <Picker Title="Cargo" ItemsSource="{Binding CargosDisponibles}" 
+                            SelectedItem="{Binding EmpleadoSeleccionado.Cargo}" 
+                            BackgroundColor="#0B2F2F" TextColor="White" TitleColor="#D2B48C"/>
+
+                    <!-- Etiqueta como "Title" para la contraseña + campo seguro -->
+                    <Label Text="Contraseña" TextColor="#D2B48C" FontAttributes="Bold" Margin="0,6,0,0"/>
+                    <Entry Placeholder="Nueva contraseña (dejar vacío para mantener actual)" 
+                           IsPassword="True"
+                           Text="{Binding ContrasenaEdicion}"
+                           BackgroundColor="#0B2F2F" TextColor="White" PlaceholderColor="#D2B48C"/>
+
+                    <!-- Fecha de contratación -->
+                    <DatePicker Date="{Binding EmpleadoSeleccionado.FechaContratacion}" 
+                                BackgroundColor="#0B2F2F" TextColor="White"/>
+
+                    <!-- Botones alineados a la derecha -->
+                    <HorizontalStackLayout Spacing="15" HorizontalOptions="End" Margin="0,8,0,0">
+                        <Button Text="Guardar Cambios" BackgroundColor="#D2B48C" TextColor="#0B2F2F" WidthRequest="140"
+                                Command="{Binding GuardarCambiosCommand}" />
+                        <Button Text="Cancelar" BackgroundColor="#5F889B" TextColor="White" WidthRequest="120"
+                                Command="{Binding CancelarCommand}" />
+                    </HorizontalStackLayout>
+
+                </VerticalStackLayout>
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

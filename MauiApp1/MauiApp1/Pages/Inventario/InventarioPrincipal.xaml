@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.Pages.Inventario.InventarioPrincipal">
+    <Grid RowDefinitions="Auto,Auto,*,Auto" Padding="20" RowSpacing="15">
+
+        <!-- 🔍 Filtro por campos -->
+        <HorizontalStackLayout Grid.Row="0" Spacing="12" Margin="0,0,0,12">
+            <Label Text="Filtrar por:" TextColor="#D2B48C" FontAttributes="Bold" VerticalOptions="Center"/>
+
+            <Picker Title="Nombre" ItemsSource="{Binding NombresDisponibles}" SelectedItem="{Binding FiltroNombre}"
+                    BackgroundColor="#0F3C3C" TextColor="White" TitleColor="#D2B48C" WidthRequest="140"/>
+
+            <Picker Title="Categoría" ItemsSource="{Binding CategoriasDisponibles}" SelectedItem="{Binding FiltroCategoria}"
+                    BackgroundColor="#0F3C3C" TextColor="White" TitleColor="#D2B48C" WidthRequest="140"/>
+
+            <Picker Title="Precio" ItemsSource="{Binding RangosPrecio}" SelectedItem="{Binding FiltroPrecio}"
+                    BackgroundColor="#0F3C3C" TextColor="White" TitleColor="#D2B48C" WidthRequest="120"/>
+        </HorizontalStackLayout>
+
+        <!-- 🧭 Encabezados de columnas -->
+        <!-- Anchos: 90, 140, flexible, 120, 120, 100, 120, 140 -->
+        <Grid Grid.Row="1"
+              ColumnDefinitions="90,140,*,120,120,100,120,140"
+              ColumnSpacing="10"
+              Padding="8"
+              BackgroundColor="#0F3C3C">
+            <Label Grid.Column="0" Text="ID Producto" TextColor="#D2B48C" FontAttributes="Bold"/>
+            <Label Grid.Column="1" Text="Nombre" TextColor="#D2B48C" FontAttributes="Bold"/>
+            <Label Grid.Column="2" Text="Descripción" TextColor="#D2B48C" FontAttributes="Bold"/>
+            <Label Grid.Column="3" Text="Precio Unitario" TextColor="#D2B48C" FontAttributes="Bold"/>
+            <Label Grid.Column="4" Text="Costo Unitario" TextColor="#D2B48C" FontAttributes="Bold"/>
+            <Label Grid.Column="5" Text="Existencia" TextColor="#D2B48C" FontAttributes="Bold"/>
+            <Label Grid.Column="6" Text="Stock Mínimo" TextColor="#D2B48C" FontAttributes="Bold"/>
+            <Label Grid.Column="7" Text="Categoría" TextColor="#D2B48C" FontAttributes="Bold"/>
+        </Grid>
+
+        <!-- 📋 Lista de productos -->
+        <CollectionView Grid.Row="2" ItemsSource="{Binding Productos}" SelectionMode="Single">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid ColumnDefinitions="90,140,*,120,120,100,120,140"
+                          ColumnSpacing="10"
+                          Padding="8"
+                          BackgroundColor="#0F3C3C"
+                          Margin="0,3">
+                        <Label Grid.Column="0" Text="{Binding IDProducto}" TextColor="White"/>
+                        <Label Grid.Column="1" Text="{Binding Nombre}" TextColor="White"/>
+                        <Label Grid.Column="2" Text="{Binding Descripcion}" TextColor="White"/>
+                        <Label Grid.Column="3" Text="{Binding PrecioUnitario, StringFormat='S/ {0:F2}'}" TextColor="White"/>
+                        <Label Grid.Column="4" Text="{Binding CostoUnitario, StringFormat='S/ {0:F2}'}" TextColor="White"/>
+                        <Label Grid.Column="5" Text="{Binding Existencia}" TextColor="White"/>
+                        <Label Grid.Column="6" Text="{Binding StockMinimo}" TextColor="White"/>
+                        <Label Grid.Column="7" Text="{Binding Categoria}" TextColor="White"/>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <!-- 🎛 Botones de acción -->
+        <HorizontalStackLayout Grid.Row="3" Spacing="16" HorizontalOptions="Center" Margin="0,8,0,0">
+            <Button Text="Agregar" BackgroundColor="#D2B48C" TextColor="#0B2F2F" WidthRequest="110"
+            Command="{Binding AgregarProductoCommand}" />
+            <Button Text="Editar" BackgroundColor="#0F3C3C" TextColor="White" WidthRequest="110" Command="{Binding EditarProductoCommand}" />
+            <Button Text="Eliminar" BackgroundColor="#D50000" TextColor="White" WidthRequest="110" Command="{Binding EliminarProductoCommand}" />
+            <Button Text="Regresar al inicio" BackgroundColor="#D2B48C" TextColor="#0B2F2F" WidthRequest="210"
+            Command="{Binding RegresarAlInicioCommand}" />
+        </HorizontalStackLayout>
+
+    </Grid>
+</ContentPage>

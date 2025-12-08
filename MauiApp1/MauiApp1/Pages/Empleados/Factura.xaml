@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.Pages.Empleados.Factura"
+             x:DataType="vm:FacturaVM"
+             xmlns:vm="clr-namespace:MauiApp1.ViewModels.Empleados">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20" BackgroundColor="#0F3C3C">
+
+            <!-- Encabezado -->
+            <VerticalStackLayout Spacing="5" HorizontalOptions="Center">
+                <Label Text="Registro de Factura" FontSize="28" TextColor="#D2B48C" FontAttributes="Bold"/>
+                <Label Text="Crea y gestiona facturas registrando los datos básicos y el cliente opcionalmente."
+                       FontSize="16" TextColor="#D2B48C" HorizontalTextAlignment="Center"/>
+            </VerticalStackLayout>
+
+            <!-- Panel principal -->
+            <Border StrokeThickness="1" Stroke="#D2B48C" BackgroundColor="#0B2F2F" Padding="20" StrokeShape="RoundRectangle 8">
+                <VerticalStackLayout Spacing="20">
+
+                    <!-- ID Factura y Fecha -->
+                    <Grid ColumnDefinitions="*,*">
+                        <VerticalStackLayout Grid.Column="0" Spacing="5">
+                            <Label Text="ID Factura (Autoincrement)" TextColor="#D2B48C"/>
+                            <Entry Text="{Binding IDFactura}" IsEnabled="False" BackgroundColor="#D2B48C" TextColor="Black" WidthRequest="900"/>
+                            <Label Text="Se genera automáticamente al guardar la factura." FontSize="12" TextColor="#D2B48C"/>
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout Grid.Column="1" Spacing="5">
+                            <Label Text="* Fecha de Emisión" TextColor="#D2B48C"/>
+                            <DatePicker Date="{Binding FechaEmision}" BackgroundColor="#D2B48C" TextColor="Black"/>
+                            <Label Text="Este campo es obligatorio." FontSize="12" TextColor="#D2B48C"/>
+                        </VerticalStackLayout>
+                    </Grid>
+
+                    <!-- Hora y Tipo de Pago -->
+                    <Grid ColumnDefinitions="*,*">
+                        <VerticalStackLayout Grid.Column="0" Spacing="5">
+                            <Label Text="Hora" TextColor="#D2B48C"/>
+                            <Entry Placeholder="HH:mm" Text="{Binding Hora}" BackgroundColor="#D2B48C" TextColor="Black" WidthRequest="900"/>
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout Grid.Column="1" Spacing="5">
+                            <Label Text="Tipo de Pago" TextColor="#D2B48C"/>
+                            <Picker ItemsSource="{Binding TiposPago}" SelectedItem="{Binding TipoPago}" BackgroundColor="#D2B48C" TextColor="Black"/>
+                        </VerticalStackLayout>
+                    </Grid>
+
+                    <!-- Monto Total y Número Actualización -->
+                    <Grid ColumnDefinitions="*,*">
+                        <VerticalStackLayout Grid.Column="0" Spacing="5">
+                            <Label Text="Monto Total" TextColor="#D2B48C"/>
+                            <Entry Placeholder="S/ 0.00" Text="{Binding MontoTotal}" Keyboard="Numeric" BackgroundColor="#D2B48C" TextColor="Black" WidthRequest="900"/>
+                            <Label Text="Ingrese el monto total de la factura." FontSize="12" TextColor="#D2B48C"/>
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout Grid.Column="1" Spacing="5">
+                            <Label Text="Número Actualización" TextColor="#D2B48C"/>
+                            <Entry Text="{Binding NumeroActualizacion}" Keyboard="Numeric" BackgroundColor="#D2B48C" TextColor="Black" />
+                            <Label Text="Úsela como contador de ediciones si es necesario." FontSize="12" TextColor="#D2B48C"/>
+                        </VerticalStackLayout>
+                    </Grid>
+
+                    <!-- Cliente -->
+                    <Label Text="Cliente (opcional)" FontSize="18" TextColor="#D2B48C" FontAttributes="Bold"/>
+                    <VerticalStackLayout Spacing="5">
+                        <Label Text="ID Cliente" TextColor="#D2B48C"/>
+                        <Entry Text="{Binding IDCliente}" Keyboard="Numeric" BackgroundColor="#D2B48C" TextColor="Black" />
+                    </VerticalStackLayout>
+
+                    <!-- Personal -->
+                    <VerticalStackLayout Spacing="5">
+                        <Label Text="ID Personal" TextColor="#D2B48C"/>
+                        <Entry Text="{Binding IDPersonal}" Keyboard="Numeric" BackgroundColor="#D2B48C" TextColor="Black"/>
+                    </VerticalStackLayout>
+
+                    <!-- Botones -->
+                    <HorizontalStackLayout Spacing="15" HorizontalOptions="Center">
+                        <Button Text="Guardar" BackgroundColor="#D2B48C" TextColor="Black" WidthRequest="120" Command="{Binding GuardarCommand}"/>
+                        <Button Text="Cancelar" BackgroundColor="#D2B48C" TextColor="Black" WidthRequest="120" Command="{Binding CancelarCommand}"/>
+                    </HorizontalStackLayout>
+
+                </VerticalStackLayout>
+            </Border>
+            <Button Text="Regresar"
+                BackgroundColor="#D2B48C"
+                TextColor="Black"
+                WidthRequest="120"
+                HorizontalOptions="Center"
+                Command="{Binding ComandoRegresar}"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

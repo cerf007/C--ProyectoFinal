@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.Pages.Inventario.AgregarProducto"
+             x:DataType="vm:AgregarProductoVM"
+             xmlns:vm="clr-namespace:MauiApp1.ViewModels.InventarioVM">
+    <Grid RowDefinitions="*" Padding=" 20,80,20,20" BackgroundColor="#0B2F2F">
+        <Border Grid.Row="4"
+                Stroke="#D2B48C"
+                StrokeThickness="2"
+                BackgroundColor="#0F3C3C"
+                Padding="15"
+                Margin="0"
+                HorizontalOptions="Fill"
+                VerticalOptions="Start"
+                StrokeShape="RoundRectangle">
+            <VerticalStackLayout Spacing="10">
+                <Label Text="Agregar Producto" TextColor="#D2B48C" FontSize="20" FontAttributes="Bold"/>
+
+                <Entry Placeholder="Nombre" Text="{Binding NuevoProducto.Nombre}" BackgroundColor="#0B2F2F" TextColor="White" PlaceholderColor="#D2B48C"/>
+                <Editor Placeholder="Descripción" Text="{Binding NuevoProducto.Descripcion}" BackgroundColor="#0B2F2F" TextColor="White" PlaceholderColor="#D2B48C" HeightRequest="80"/>
+                <Entry Placeholder="Precio Unitario" Text="{Binding NuevoProducto.PrecioUnitario}" Keyboard="Numeric" BackgroundColor="#0B2F2F" TextColor="White" PlaceholderColor="#D2B48C"/>
+                <Entry Placeholder="Costo Unitario" Text="{Binding NuevoProducto.CostoUnitario}" Keyboard="Numeric" BackgroundColor="#0B2F2F" TextColor="White" PlaceholderColor="#D2B48C"/>
+                <Entry Placeholder="Existencia" Text="{Binding NuevoProducto.Existencia}" Keyboard="Numeric" BackgroundColor="#0B2F2F" TextColor="White" PlaceholderColor="#D2B48C"/>
+                <Entry Placeholder="Stock Mínimo" Text="{Binding NuevoProducto.StockMinimo}" Keyboard="Numeric" BackgroundColor="#0B2F2F" TextColor="White" PlaceholderColor="#D2B48C"/>
+                <Picker Title="Categoría" ItemsSource="{Binding CategoriasDisponibles}" SelectedItem="{Binding NuevoProducto.Categoria}" BackgroundColor="#0B2F2F" TextColor="White" TitleColor="#D2B48C"/>
+
+                <Button Text="Guardar" BackgroundColor="#D2B48C" TextColor="#0B2F2F" WidthRequest="120" HorizontalOptions="Center" Command="{Binding GuardarCommand}"/>
+
+            </VerticalStackLayout>
+        </Border>
+        <Button Text="Regresar"
+                        BackgroundColor="#D2B48C"
+                        TextColor="#0B2F2F"
+                        WidthRequest="120"
+                        HorizontalOptions="Start"
+                        VerticalOptions="End"
+                        Command="{Binding ComandoRegresar}"/>
+
+    </Grid>
+</ContentPage>
